@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directional Derivatives and the Gradient Vector &#8212; My Math Hub</title>
+    <title>Directional Derivatives and Gradient Vector &#8212; My Math Hub</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Optimization" href="4_optimization.html" />
-    <link rel="prev" title="Second Derivatives and Chain Rule" href="2_second_derivatives.html" />
+    <link rel="prev" title="Second-Order Partial Derivatives and Chain Rule" href="2_second_derivatives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -102,18 +102,23 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="0_multivariable_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="1_partial_derivatives.html">
    Partial Derivatives
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_second_derivatives.html">
-   Second Derivatives and Chain Rule
+   Second-Order Partial Derivatives and Chain Rule
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Directional Derivatives and the Gradient Vector
+   Directional Derivatives and Gradient Vector
   </a>
  </li>
  <li class="toctree-l1">
@@ -255,6 +260,21 @@ const thebe_selector_output = ".output, .cell_output"
    Functions of 3 Variables
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tangent-line-to-a-level-curve">
+   Tangent Line to a Level Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algebraic-rules-of-gradient">
+   Algebraic Rules of Gradient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tangent-planes-and-normal-lines">
+   Tangent Planes and Normal Lines
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -265,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Directional Derivatives and the Gradient Vector</h1>
+                <h1>Directional Derivatives and Gradient Vector</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -295,6 +315,21 @@ const thebe_selector_output = ".output, .cell_output"
    Functions of 3 Variables
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tangent-line-to-a-level-curve">
+   Tangent Line to a Level Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algebraic-rules-of-gradient">
+   Algebraic Rules of Gradient
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tangent-planes-and-normal-lines">
+   Tangent Planes and Normal Lines
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -304,8 +339,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="directional-derivatives-and-the-gradient-vector">
-<h1>Directional Derivatives and the Gradient Vector<a class="headerlink" href="#directional-derivatives-and-the-gradient-vector" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="directional-derivatives-and-gradient-vector">
+<h1>Directional Derivatives and Gradient Vector<a class="headerlink" href="#directional-derivatives-and-gradient-vector" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="gradient-vector">
 <h2>Gradient Vector<a class="headerlink" href="#gradient-vector" title="Permalink to this headline">¶</a></h2>
 <p>For a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span>, the gradient vector is defined by</p>
@@ -321,7 +356,7 @@ const thebe_selector_output = ".output, .cell_output"
 \[
 D_{\vec{u}} f(a, b)=\lim _{h \rightarrow 0} \frac{f\left(a+h u_{1}, b+h u_{2}\right)-f(a, b)}{h} .
 \]</div>
-<p>Hence the directional derivative of a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is</p>
+<img src="../../media/mvc/grad/img1.png" style="width:400px;"/><p>Hence the directional derivative of a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
 D_{\vec{u}} f(a, b)=\overrightarrow{\boldsymbol{\nabla}} f(a, b) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b) u_{1}+f_{y}(a, b) u_{2} .
@@ -338,7 +373,7 @@ D_{\vec{u}} f(a, b)=\overrightarrow{\boldsymbol{\nabla}} f(a, b) \cdot \hat{\bol
 <li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span> is perpendicular to the level curve (contour) of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
 <li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span>.</p></li>
 </ul>
-</div>
+<img src="../../media/mvc/grad/img2.png" style="width:400px;"/></div>
 <div class="section" id="functions-of-3-variables">
 <h2>Functions of 3 Variables<a class="headerlink" href="#functions-of-3-variables" title="Permalink to this headline">¶</a></h2>
 <p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is defined by</p>
@@ -356,6 +391,22 @@ D_{\vec{u}} f(a, b, c)=\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \cdot \ha
 <li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span> is perpendicular to the level surface of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span></p></li>
 <li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span>.</p></li>
 </ul>
+</div>
+<div class="section" id="tangent-line-to-a-level-curve">
+<h2>Tangent Line to a Level Curve<a class="headerlink" href="#tangent-line-to-a-level-curve" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) = 0
+\]</div>
+<img src="../../media/mvc/grad/img3.png" style="width:400px;"/></div>
+<div class="section" id="algebraic-rules-of-gradient">
+<h2>Algebraic Rules of Gradient<a class="headerlink" href="#algebraic-rules-of-gradient" title="Permalink to this headline">¶</a></h2>
+<img src="../../media/mvc/grad/img4.png" style="width:400px;"/>
+</div>
+<div class="section" id="tangent-planes-and-normal-lines">
+<h2>Tangent Planes and Normal Lines<a class="headerlink" href="#tangent-planes-and-normal-lines" title="Permalink to this headline">¶</a></h2>
+<img src="../../media/mvc/grad/img5.png" style="width:400px;"/><img src="../../media/mvc/grad/img6.png" alt="Thomas's Calculus" style="width:400px;"/>
+<img src="../../media/mvc/grad/img7.png" alt="Thomas's Calculus" style="width:400px;"/>
 </div>
 </div>
 
@@ -388,7 +439,7 @@ D_{\vec{u}} f(a, b, c)=\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \cdot \ha
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Second Derivatives and Chain Rule</p>
+            <p class="prev-next-title">Second-Order Partial Derivatives and Chain Rule</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="4_optimization.html" title="next page">
