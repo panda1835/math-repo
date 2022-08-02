@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Second Derivatives and Chain Rule" href="2_second_derivatives.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../../intro.html" />
+    <link rel="next" title="Second-Order Partial Derivatives and Chain Rule" href="2_second_derivatives.html" />
+    <link rel="prev" title="Functions" href="0_multivariable_functions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,6 +101,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_multivariable_functions.html">
+   Functions
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Partial Derivatives
@@ -108,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_second_derivatives.html">
-   Second Derivatives and Chain Rule
+   Second-Order Partial Derivatives and Chain Rule
   </a>
  </li>
  <li class="toctree-l1">
@@ -241,6 +246,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-derivatives-and-continuity">
+   Partial Derivatives and Continuity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#partial-derivatives-of-more-variables">
    Partial derivatives of more variables
   </a>
@@ -307,6 +317,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definition">
    Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-derivatives-and-continuity">
+   Partial Derivatives and Continuity
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -383,6 +398,11 @@ f_{x}(x, y)=\lim _{h \rightarrow 0} \frac{f(x+h, y)-f(x, y)}{h}, \quad f_{y}(x, 
 &amp;f_{y}(x, y)=f_{y}=\frac{\partial f}{\partial y}=\frac{\partial}{\partial y} f(x, y)=z_{y}=\frac{\partial z}{\partial y}
 \end{aligned}
 \end{split}\]</div>
+<img src="../../media/mvc/pd/img2.jpg" alt="Thomas's Calculus" style="height: 400px"/></div>
+<div class="section" id="partial-derivatives-and-continuity">
+<h2>Partial Derivatives and Continuity<a class="headerlink" href="#partial-derivatives-and-continuity" title="Permalink to this headline">¶</a></h2>
+<p>A function <span class="math notranslate nohighlight">\(f(x, y)\)</span> can have partial derivatives with respect to both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> at a point without the function being continuous there. This is different from functions of a single variable, where the existence of a derivative implies continuity.</p>
+<img src="../../media/mvc/pd/img3.jpg" alt="Thomas's Calculus" style="height: 400px"/><p><span class="math notranslate nohighlight">\(f(x,y)\)</span> consists of the lines <span class="math notranslate nohighlight">\(L1\)</span> and <span class="math notranslate nohighlight">\(L2\)</span> (lying 1 unit above the <span class="math notranslate nohighlight">\(xy\)</span>-plane) and the four open quadrants of the <span class="math notranslate nohighlight">\(xy\)</span>-plane. <strong>The function has partial derivatives at the origin but is not continuous there</strong>.</p>
 </div>
 <div class="section" id="partial-derivatives-of-more-variables">
 <h2>Partial derivatives of more variables<a class="headerlink" href="#partial-derivatives-of-more-variables" title="Permalink to this headline">¶</a></h2>
@@ -424,8 +444,7 @@ L(x, y)=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b) .
 <li><p>The total differential <span class="math notranslate nohighlight">\(d z\)</span> is defined by <span class="math notranslate nohighlight">\(d z=f_{x}(x, y) d x+f_{y}(x, y) d y=\frac{\partial f}{\partial x} d x+\frac{\partial f}{\partial y} d y\)</span> and is the change in the tangent plane.</p></li>
 <li><p>The change in the function is <span class="math notranslate nohighlight">\(\Delta z\)</span>. For small changes, <span class="math notranslate nohighlight">\(\Delta z \approx d z=f_{x} \Delta x+f_{y} \Delta y\)</span> and <span class="math notranslate nohighlight">\(f(x+d x, y+d y) \approx f(x, y)+d z=f(x, y)+f_{x}(x, y) d x+f_{y}(x, y) d y\)</span>.</p></li>
 </ul>
-<p><img alt="image" src="../../_images/img1.jpg" /></p>
-</div>
+<img src="../../media/mvc/pd/img1.jpg" style="height: 400px;"></div>
 <div class="section" id="extensions-to-higher-dimensions">
 <h2>Extensions to higher dimensions<a class="headerlink" href="#extensions-to-higher-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>Linearizations and differentials can be defined in a similar way for functions of more variables. For example, for <span class="math notranslate nohighlight">\(w=f(x, y, z)\)</span></p>
@@ -469,17 +488,17 @@ L(x, y)=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b) .
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="0_multivariable_functions.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Functions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2_second_derivatives.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Second Derivatives and Chain Rule</p>
+        <p class="prev-next-title">Second-Order Partial Derivatives and Chain Rule</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
