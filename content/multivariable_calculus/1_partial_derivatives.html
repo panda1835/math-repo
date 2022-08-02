@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Second Derivatives and Chain Rule" href="2_second_derivatives.html" />
@@ -245,12 +247,26 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tangent-plane-to-the-surface-z-f-x-y-at-the-point-a-b">
-   Tangent plane to the surface $z=f(x, y)$ at the point $(a, b)$
+   Tangent plane to the surface
+   <span class="math notranslate nohighlight">
+    \(z=f(x, y)\)
+   </span>
+   at the point
+   <span class="math notranslate nohighlight">
+    \((a, b)\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linearization-of-f-x-y-at-a-b">
-   Linearization of $f(x, y)$ at $(a, b)$
+   Linearization of
+   <span class="math notranslate nohighlight">
+    \(f(x, y)\)
+   </span>
+   at
+   <span class="math notranslate nohighlight">
+    \((a, b)\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -300,12 +316,26 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tangent-plane-to-the-surface-z-f-x-y-at-the-point-a-b">
-   Tangent plane to the surface $z=f(x, y)$ at the point $(a, b)$
+   Tangent plane to the surface
+   <span class="math notranslate nohighlight">
+    \(z=f(x, y)\)
+   </span>
+   at the point
+   <span class="math notranslate nohighlight">
+    \((a, b)\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#linearization-of-f-x-y-at-a-b">
-   Linearization of $f(x, y)$ at $(a, b)$
+   Linearization of
+   <span class="math notranslate nohighlight">
+    \(f(x, y)\)
+   </span>
+   at
+   <span class="math notranslate nohighlight">
+    \((a, b)\)
+   </span>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -336,76 +366,77 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Partial Derivatives<a class="headerlink" href="#partial-derivatives" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
-<p>The partial derivatives of a function $f(x, y)$ are:
-$$
-f_{x}(x, y)=\lim <em>{h \rightarrow 0} \frac{f(x+h, y)-f(x, y)}{h}, \quad f</em>{y}(x, y)=\lim _{h \rightarrow 0} \frac{f(x, y+h)-f(x, y)}{h}
-$$</p>
+<p>The partial derivatives of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> are:
+$<span class="math notranslate nohighlight">\(
+f_{x}(x, y)=\lim _{h \rightarrow 0} \frac{f(x+h, y)-f(x, y)}{h}, \quad f_{y}(x, y)=\lim _{h \rightarrow 0} \frac{f(x, y+h)-f(x, y)}{h}
+\)</span>$</p>
 <ul class="simple">
-<li><p>To find $f_{x}$ we differentiate $f(x, y)$ with respect to $x$, treating $y$ as a constant.</p></li>
-<li><p>To find $f_{y}$ we differentiate $f(x, y)$ with respect to $y$, treating $x$ as a constant.</p></li>
+<li><p>To find <span class="math notranslate nohighlight">\(f_{x}\)</span> we differentiate <span class="math notranslate nohighlight">\(f(x, y)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>, treating <span class="math notranslate nohighlight">\(y\)</span> as a constant.</p></li>
+<li><p>To find <span class="math notranslate nohighlight">\(f_{y}\)</span> we differentiate <span class="math notranslate nohighlight">\(f(x, y)\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span>, treating <span class="math notranslate nohighlight">\(x\)</span> as a constant.</p></li>
 </ul>
-<p>Alternative notations for the partial derivatives of $z=f(x, y)$ are
-$$
+<p>Alternative notations for the partial derivatives of <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> are
+$<span class="math notranslate nohighlight">\(
 \begin{aligned}
-&amp;f_{x}(x, y)=f_{x}=\frac{\partial f}{\partial x}=\frac{\partial}{\partial x} f(x, y)=z_{x}=\frac{\partial z}{\partial x} \
+&amp;f_{x}(x, y)=f_{x}=\frac{\partial f}{\partial x}=\frac{\partial}{\partial x} f(x, y)=z_{x}=\frac{\partial z}{\partial x} \\
 &amp;f_{y}(x, y)=f_{y}=\frac{\partial f}{\partial y}=\frac{\partial}{\partial y} f(x, y)=z_{y}=\frac{\partial z}{\partial y}
 \end{aligned}
-$$</p>
+\)</span>$</p>
 </div>
 <div class="section" id="partial-derivatives-of-more-variables">
 <h2>Partial derivatives of more variables<a class="headerlink" href="#partial-derivatives-of-more-variables" title="Permalink to this headline">¶</a></h2>
-<p>Partial derivatives of functions of three or more variables are defined in a similar way. For example, for $f(x, y, z)$ we have
-$$
+<p>Partial derivatives of functions of three or more variables are defined in a similar way. For example, for <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> we have
+$<span class="math notranslate nohighlight">\(
 f_{x}(x, y, z)=\lim _{h \rightarrow 0} \frac{f(x+h, y, z)-f(x, y, z)}{h}
-$$</p>
+\)</span>$</p>
 <ul class="simple">
-<li><p>To find $f_{x}(x, y, z)$ we differentiate $f(x, y, z)$ with respect to $x$, treating $y$ and $z$ as constants.</p></li>
+<li><p>To find <span class="math notranslate nohighlight">\(f_{x}(x, y, z)\)</span> we differentiate <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>, treating <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> as constants.</p></li>
 </ul>
 </div>
 <div class="section" id="tangent-plane-to-the-surface-z-f-x-y-at-the-point-a-b">
-<h2>Tangent plane to the surface $z=f(x, y)$ at the point $(a, b)$<a class="headerlink" href="#tangent-plane-to-the-surface-z-f-x-y-at-the-point-a-b" title="Permalink to this headline">¶</a></h2>
-<p>If $f$ is continuous and differentiable in an open disk containing the point $(a, b)$, the equation of the tangent plane is
-$$
+<h2>Tangent plane to the surface <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> at the point <span class="math notranslate nohighlight">\((a, b)\)</span><a class="headerlink" href="#tangent-plane-to-the-surface-z-f-x-y-at-the-point-a-b" title="Permalink to this headline">¶</a></h2>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is continuous and differentiable in an open disk containing the point <span class="math notranslate nohighlight">\((a, b)\)</span>, the equation of the tangent plane is
+$<span class="math notranslate nohighlight">\(
 z=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(x-b) .
-$$</p>
+\)</span>$</p>
 </div>
 <div class="section" id="linearization-of-f-x-y-at-a-b">
-<h2>Linearization of $f(x, y)$ at $(a, b)$<a class="headerlink" href="#linearization-of-f-x-y-at-a-b" title="Permalink to this headline">¶</a></h2>
-<p>$$
+<h2>Linearization of <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span><a class="headerlink" href="#linearization-of-f-x-y-at-a-b" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
 L(x, y)=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b) .
-$$
-Near $(a, b)$ we may use the linear approximation $f(x, y) \approx L(x, y)$.</p>
+\]</div>
+<p>Near <span class="math notranslate nohighlight">\((a, b)\)</span> we may use the linear approximation <span class="math notranslate nohighlight">\(f(x, y) \approx L(x, y)\)</span>.</p>
 </div>
 <div class="section" id="differentials-and-small-changes">
 <h2>Differentials and Small Changes<a class="headerlink" href="#differentials-and-small-changes" title="Permalink to this headline">¶</a></h2>
-<p>Recall that in single variable calculus, if we have a differentiable function $y=f(x)$ and $x$ changes by $d x=\Delta x$ then</p>
+<p>Recall that in single variable calculus, if we have a differentiable function <span class="math notranslate nohighlight">\(y=f(x)\)</span> and <span class="math notranslate nohighlight">\(x\)</span> changes by <span class="math notranslate nohighlight">\(d x=\Delta x\)</span> then</p>
 <ul class="simple">
-<li><p>the differential $d y$ is defined by $d y=f^{\prime}(x) d x$ and is the change in the tangent line.</p></li>
-<li><p>the corresponding small change in the function is $\Delta y \approx d y$.</p></li>
+<li><p>the differential <span class="math notranslate nohighlight">\(d y\)</span> is defined by <span class="math notranslate nohighlight">\(d y=f^{\prime}(x) d x\)</span> and is the change in the tangent line.</p></li>
+<li><p>the corresponding small change in the function is <span class="math notranslate nohighlight">\(\Delta y \approx d y\)</span>.</p></li>
 </ul>
-<p>Hence $\Delta y \approx f^{\prime}(x) \Delta x$ and $f(x+\Delta x) \approx f(x)+f^{\prime}(x) d x$.</p>
-<p>Similarly, suppose we have a differentiable function $z=f(x, y)$ and that $x$ and $y$ change by amounts $d x=\Delta x$ and $d y=\Delta y .$</p>
+<p>Hence <span class="math notranslate nohighlight">\(\Delta y \approx f^{\prime}(x) \Delta x\)</span> and <span class="math notranslate nohighlight">\(f(x+\Delta x) \approx f(x)+f^{\prime}(x) d x\)</span>.</p>
+<p>Similarly, suppose we have a differentiable function <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> and that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> change by amounts <span class="math notranslate nohighlight">\(d x=\Delta x\)</span> and <span class="math notranslate nohighlight">\(d y=\Delta y .\)</span></p>
 <ul class="simple">
-<li><p>The total differential $d z$ is defined by $d z=f_{x}(x, y) d x+f_{y}(x, y) d y=\frac{\partial f}{\partial x} d x+\frac{\partial f}{\partial y} d y$ and is the change in the tangent plane.</p></li>
-<li><p>The change in the function is $\Delta z$. For small changes, $\Delta z \approx d z=f_{x} \Delta x+f_{y} \Delta y$ and $f(x+d x, y+d y) \approx f(x, y)+d z=f(x, y)+f_{x}(x, y) d x+f_{y}(x, y) d y$.</p></li>
+<li><p>The total differential <span class="math notranslate nohighlight">\(d z\)</span> is defined by <span class="math notranslate nohighlight">\(d z=f_{x}(x, y) d x+f_{y}(x, y) d y=\frac{\partial f}{\partial x} d x+\frac{\partial f}{\partial y} d y\)</span> and is the change in the tangent plane.</p></li>
+<li><p>The change in the function is <span class="math notranslate nohighlight">\(\Delta z\)</span>. For small changes, <span class="math notranslate nohighlight">\(\Delta z \approx d z=f_{x} \Delta x+f_{y} \Delta y\)</span> and <span class="math notranslate nohighlight">\(f(x+d x, y+d y) \approx f(x, y)+d z=f(x, y)+f_{x}(x, y) d x+f_{y}(x, y) d y\)</span>.</p></li>
 </ul>
 <p>$$</p>
 <p><img alt="image" src="../../_images/img1.jpg" /></p>
 </div>
 <div class="section" id="extensions-to-higher-dimensions">
 <h2>Extensions to higher dimensions<a class="headerlink" href="#extensions-to-higher-dimensions" title="Permalink to this headline">¶</a></h2>
-<p>Linearizations and differentials can be defined in a similar way for functions of more variables. For example, for $w=f(x, y, z)$</p>
+<p>Linearizations and differentials can be defined in a similar way for functions of more variables. For example, for <span class="math notranslate nohighlight">\(w=f(x, y, z)\)</span></p>
 <ul class="simple">
-<li><p>the linear approximation of $f$ at $(a, b, c)$ is $f(x, y, z) \approx L(x, y, z)=f(a, b, c)+f_{x}(a, b, c)(x-a)+f_{y}(a, b, c)(y-b)+f_{z}(a, b, c)(z-c) .$</p></li>
-<li><p>the differential $d w$ is $d w=f_{x} d x+f_{y} d y+f_{z} d z$.</p></li>
+<li><p>the linear approximation of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> is <span class="math notranslate nohighlight">\(f(x, y, z) \approx L(x, y, z)=f(a, b, c)+f_{x}(a, b, c)(x-a)+f_{y}(a, b, c)(y-b)+f_{z}(a, b, c)(z-c) .\)</span></p></li>
+<li><p>the differential <span class="math notranslate nohighlight">\(d w\)</span> is <span class="math notranslate nohighlight">\(d w=f_{x} d x+f_{y} d y+f_{z} d z\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="note-on-differentiability">
 <h2>Note on Differentiability<a class="headerlink" href="#note-on-differentiability" title="Permalink to this headline">¶</a></h2>
 <p>Differentiability of functions of two or more variables is more complicated.</p>
 <ul class="simple">
-<li><p>Informally it can be said that a function $f(x, y)$ is differentiable at a point $(a, b)$ if it is wellapproximated by a linear function near that point.</p></li>
-<li><p>More formally, it can be proved that if the partial derivatives $f_{x}$ and $f_{y}$ exist and are continuous on a small disk centred at $(a, b)$ then $f$ is differentiable at $(a, b)$.</p></li>
+<li><p>Informally it can be said that a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> is differentiable at a point <span class="math notranslate nohighlight">\((a, b)\)</span> if it is wellapproximated by a linear function near that point.</p></li>
+<li><p>More formally, it can be proved that if the partial derivatives <span class="math notranslate nohighlight">\(f_{x}\)</span> and <span class="math notranslate nohighlight">\(f_{y}\)</span> exist and are continuous on a small disk centred at <span class="math notranslate nohighlight">\((a, b)\)</span> then <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\((a, b)\)</span>.</p></li>
 </ul>
 </div>
 </div>

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Optimization" href="4_optimization.html" />
@@ -289,48 +291,50 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Directional Derivatives and the Gradient Vector<a class="headerlink" href="#directional-derivatives-and-the-gradient-vector" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="gradient-vector">
 <h2>Gradient Vector<a class="headerlink" href="#gradient-vector" title="Permalink to this headline">¶</a></h2>
-<p>For a differentiable function $f(x, y)$, the gradient vector is defined by</p>
-<p>$$
+<p>For a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span>, the gradient vector is defined by</p>
+<div class="math notranslate nohighlight">
+\[
 \vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}
-$$</p>
+\]</div>
 </div>
 <div class="section" id="directional-derivative">
 <h2>Directional Derivative<a class="headerlink" href="#directional-derivative" title="Permalink to this headline">¶</a></h2>
-<p>The directional derivative of $f(x, y)$ at $(a, b)$ in the direction of a unit vector $\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle$ is, provided the limit exists,
-$$
-D_{\vec{u}} f(a, b)=\lim <em>{h \rightarrow 0} \frac{f\left(a+h u</em>{1}, b+h u_{2}\right)-f(a, b)}{h} .
-$$</p>
-<p>Hence the directional derivative of a differentiable function $f(x, y)$ at $(a, b)$ in the direction of a unit vector $\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle$ is</p>
-<p>$$
+<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is, provided the limit exists,
+$<span class="math notranslate nohighlight">\(
+D_{\vec{u}} f(a, b)=\lim _{h \rightarrow 0} \frac{f\left(a+h u_{1}, b+h u_{2}\right)-f(a, b)}{h} .
+\)</span>$</p>
+<p>Hence the directional derivative of a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
 D_{\vec{u}} f(a, b)=\overrightarrow{\boldsymbol{\nabla}} f(a, b) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b) u_{1}+f_{y}(a, b) u_{2} .
-$$</p>
+\]</div>
 <ul class="simple">
-<li><p>It is the rate of change of $z$ in the direction of $\hat{\boldsymbol{u}}$ (and is a scalar)</p></li>
-<li><p>Alternative notations: $\left.D_{\vec{u}} f\right|<em>{(a, b)}, \quad f</em>{\vec{u}}(a, b)$</p></li>
+<li><p>It is the rate of change of <span class="math notranslate nohighlight">\(z\)</span> in the direction of <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}\)</span> (and is a scalar)</p></li>
+<li><p>Alternative notations: <span class="math notranslate nohighlight">\(\left.D_{\vec{u}} f\right|_{(a, b)}, \quad f_{\vec{u}}(a, b)\)</span></p></li>
 </ul>
 </div>
 <div class="section" id="geometrical-properties">
 <h2>Geometrical properties<a class="headerlink" href="#geometrical-properties" title="Permalink to this headline">¶</a></h2>
-<p>If $f$ is a differentiable function at the point $(a, b)$ and $\vec{\nabla} f(a, b) \neq \overrightarrow{\mathbf{0}}$, then:</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is a differentiable function at the point <span class="math notranslate nohighlight">\((a, b)\)</span> and <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
 <ul class="simple">
-<li><p>$\vec{\nabla} f(a, b)$ is perpendicular to the level curve (contour) of $f$ through $(a, b)$</p></li>
-<li><p>the maximum rate of change of $f$ at $(a, b)$ is $|\vec{\nabla} f|$ and occurs in the direction of $\vec{\nabla} f(a, b)$.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span> is perpendicular to the level curve (contour) of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
+<li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="functions-of-3-variables">
 <h2>Functions of 3 Variables<a class="headerlink" href="#functions-of-3-variables" title="Permalink to this headline">¶</a></h2>
-<p>Similarly for a function $f(x, y, z)$, the gradient vector is defined by
-$$
+<p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is defined by
+$<span class="math notranslate nohighlight">\(
 \vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}, f_{z}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}+\frac{\partial f}{\partial z} \mathbf{k}
-$$</p>
-<p>The directional derivative of $f(x, y, z)$ at $(a, b, c)$ in the direction of a unit vector $\hat{\boldsymbol{u}}=$ $\left\langle u_{1}, u_{2}, u_{3}\right\rangle$ is
-$$
+\)</span>$</p>
+<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\)</span> <span class="math notranslate nohighlight">\(\left\langle u_{1}, u_{2}, u_{3}\right\rangle\)</span> is
+$<span class="math notranslate nohighlight">\(
 D_{\vec{u}} f(a, b, c)=\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b, c) u_{1}+f_{y}(a, b, c) u_{2}+f_{z}(a, b, c) u_{3} .
-$$</p>
-<p>If $\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \neq \overrightarrow{\mathbf{0}}$, then:</p>
+\)</span>$</p>
+<p>If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
 <ul class="simple">
-<li><p>$\vec{\nabla} f(a, b, c)$ is perpendicular to the level surface of $f$ at $(a, b, c)$</p></li>
-<li><p>the maximum rate of change of $f$ at $(a, b, c)$ is $|\vec{\nabla} f|$ and occurs in the direction of $\vec{\nabla} f(a, b, c)$.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span> is perpendicular to the level surface of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span></p></li>
+<li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span>.</p></li>
 </ul>
 </div>
 </div>

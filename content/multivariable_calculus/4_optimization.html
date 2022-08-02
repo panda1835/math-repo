@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Double Integrals" href="5_double_integrals.html" />
@@ -319,76 +321,78 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="extrema-definitions">
 <h2>Extrema - Definitions<a class="headerlink" href="#extrema-definitions" title="Permalink to this headline">¶</a></h2>
-<p>Consider a function $f$ defined on a region $R$.</p>
+<p>Consider a function <span class="math notranslate nohighlight">\(f\)</span> defined on a region <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <ul class="simple">
-<li><p>$f$ has an local maximum at the point $P_{0}$ if $f\left(P_{0}\right) \geq f(P)$ for all points $P$ near $P_{0}$.</p></li>
-<li><p>$f$ has an local minimum at the point $P_{0}$ if $f\left(P_{0}\right) \leq f(P)$ for all points $P$ near $P_{0}$.</p></li>
-<li><p>$f$ has an absolute maximum on $R$ at the point $P_{0}$ if $f\left(P_{0}\right) \geq f(P)$ for all points $P$ in $R$.</p></li>
-<li><p>$f$ has an absolute minimum on $R$ at the point $P_{0}$ if $f\left(P_{0}\right) \leq f(P)$ for all points $P$ in $R$.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has an local maximum at the point <span class="math notranslate nohighlight">\(P_{0}\)</span> if <span class="math notranslate nohighlight">\(f\left(P_{0}\right) \geq f(P)\)</span> for all points <span class="math notranslate nohighlight">\(P\)</span> near <span class="math notranslate nohighlight">\(P_{0}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has an local minimum at the point <span class="math notranslate nohighlight">\(P_{0}\)</span> if <span class="math notranslate nohighlight">\(f\left(P_{0}\right) \leq f(P)\)</span> for all points <span class="math notranslate nohighlight">\(P\)</span> near <span class="math notranslate nohighlight">\(P_{0}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has an absolute maximum on <span class="math notranslate nohighlight">\(R\)</span> at the point <span class="math notranslate nohighlight">\(P_{0}\)</span> if <span class="math notranslate nohighlight">\(f\left(P_{0}\right) \geq f(P)\)</span> for all points <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has an absolute minimum on <span class="math notranslate nohighlight">\(R\)</span> at the point <span class="math notranslate nohighlight">\(P_{0}\)</span> if <span class="math notranslate nohighlight">\(f\left(P_{0}\right) \leq f(P)\)</span> for all points <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="critical-points">
 <h2>Critical Points<a class="headerlink" href="#critical-points" title="Permalink to this headline">¶</a></h2>
-<p>Points where the gradient is either $\overrightarrow{0}$ or undefined are called critical points of the function.</p>
+<p>Points where the gradient is either <span class="math notranslate nohighlight">\(\overrightarrow{0}\)</span> or undefined are called critical points of the function.</p>
 <ul class="simple">
-<li><p>To find the CPs of a function $f(x, y)$ we therefore need to find $f_{x}$ and $f_{y}$ and identify any values of $x, y$ for which one of the partial derivatives does not exist or for which both partial derivatives are simultaneously zero, that is the solution of the system of equations
-$$
+<li><p>To find the CPs of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> we therefore need to find <span class="math notranslate nohighlight">\(f_{x}\)</span> and <span class="math notranslate nohighlight">\(f_{y}\)</span> and identify any values of <span class="math notranslate nohighlight">\(x, y\)</span> for which one of the partial derivatives does not exist or for which both partial derivatives are simultaneously zero, that is the solution of the system of equations
+$<span class="math notranslate nohighlight">\(
 \begin{aligned}
-&amp;f_{x}(x, y)=0 \
+&amp;f_{x}(x, y)=0 \\
 &amp;f_{y}(x, y)=0
 \end{aligned}
-$$</p></li>
-<li><p>Similarly for a function $f(x, y, z)$ we look for points where one of the partial derivatives does not exist or $f_{x}(x, y, z)=f_{y}(x, y, z)=f_{z}(x, y, z)=0$.</p></li>
+\)</span>$</p></li>
+<li><p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> we look for points where one of the partial derivatives does not exist or <span class="math notranslate nohighlight">\(f_{x}(x, y, z)=f_{y}(x, y, z)=f_{z}(x, y, z)=0\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="second-derivative-test">
 <h2>Second Derivative Test<a class="headerlink" href="#second-derivative-test" title="Permalink to this headline">¶</a></h2>
-<p>The second-derivative test for local extrema: Suppose $\left(x_{0}, y_{0}\right)$ is a point where $\operatorname{grad} f\left(x_{0}, y_{0}\right)=\overrightarrow{0}$. Let</p>
-<p>$$
+<p>The second-derivative test for local extrema: Suppose <span class="math notranslate nohighlight">\(\left(x_{0}, y_{0}\right)\)</span> is a point where <span class="math notranslate nohighlight">\(\operatorname{grad} f\left(x_{0}, y_{0}\right)=\overrightarrow{0}\)</span>. Let</p>
+<div class="math notranslate nohighlight">
+\[
 D=f_{x x}\left(x_{0}, y_{0}\right) f_{y y}\left(x_{0}, y_{0}\right)-\left(f_{x y}\left(x_{0}, y_{0}\right)\right)^{2} .
-$$</p>
+\]</div>
 <ul class="simple">
-<li><p>If $D&gt;0$ and $f_{x x}\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)&gt;0$, then $f$ has a local minimum at $\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)$.</p>
+<li><p>If <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(f_{x x}\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)&gt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\(\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)\)</span>.</p>
 <ul>
-<li><p>If $D&gt;0$ and $f_{x x}\left(x_{0}, y_{0}\right)&lt;0$, then $f$ has a local maximum at $\left(x_{0}, y_{\mathrm{o}}\right)$.</p></li>
-<li><p>If $D&lt;0$, then $f$ has a saddle point at $\left(x_{0}, y_{\mathrm{o}}\right)$.</p></li>
-<li><p>If $D=0$, anything can happen: $f$ can have a local maximum, or a local minimum, or a saddle point, or none of these, at $\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)$.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(f_{x x}\left(x_{0}, y_{0}\right)&lt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a local maximum at <span class="math notranslate nohighlight">\(\left(x_{0}, y_{\mathrm{o}}\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(D&lt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a saddle point at <span class="math notranslate nohighlight">\(\left(x_{0}, y_{\mathrm{o}}\right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(D=0\)</span>, anything can happen: <span class="math notranslate nohighlight">\(f\)</span> can have a local maximum, or a local minimum, or a saddle point, or none of these, at <span class="math notranslate nohighlight">\(\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)\)</span>.</p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="the-extreme-value-theorem-for-multivariable-functions">
 <h2>The Extreme Value Theorem for Multivariable Functions<a class="headerlink" href="#the-extreme-value-theorem-for-multivariable-functions" title="Permalink to this headline">¶</a></h2>
-<p>If a function $z=f(x, y)$ is continuous on a closed, bounded region $R$ then it has an absolute maximum and an absolute minimum in $R$.</p>
+<p>If a function <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> is continuous on a closed, bounded region <span class="math notranslate nohighlight">\(R\)</span> then it has an absolute maximum and an absolute minimum in <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <ul class="simple">
-<li><p>These absolute extrema occur either at critical points inside $R$ or on the boundary of $R$.</p></li>
+<li><p>These absolute extrema occur either at critical points inside <span class="math notranslate nohighlight">\(R\)</span> or on the boundary of <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
 <li><p>A closed region is a region which contains all its boundary points.</p></li>
-<li><p>A bounded region is a region which does not stretch to infinity in any direction. (In $R^{2}$ it is a region contained within some disk.)</p></li>
+<li><p>A bounded region is a region which does not stretch to infinity in any direction. (In <span class="math notranslate nohighlight">\(R^{2}\)</span> it is a region contained within some disk.)</p></li>
 </ul>
 </div>
 <div class="section" id="the-method-of-lagrange-multipliers">
 <h2>The Method of Lagrange Multipliers<a class="headerlink" href="#the-method-of-lagrange-multipliers" title="Permalink to this headline">¶</a></h2>
-<p>Suppose $f(x, y, z)$ and $g(x, y, z)$ are differentiable and $\vec{\nabla} g \neq \overrightarrow{\mathbf{0}}$ when $g(x, y, z)=k$. To find the local maximum and minimum values of $f$ subject to the constraint $g(x, y, z)=k$ (if these exist), find the values of $x, y, z$, and $\lambda$ that simultaneously satisfy the equations
-$$
+<p>Suppose <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> and <span class="math notranslate nohighlight">\(g(x, y, z)\)</span> are differentiable and <span class="math notranslate nohighlight">\(\vec{\nabla} g \neq \overrightarrow{\mathbf{0}}\)</span> when <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span>. To find the local maximum and minimum values of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span> (if these exist), find the values of <span class="math notranslate nohighlight">\(x, y, z\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> that simultaneously satisfy the equations
+$<span class="math notranslate nohighlight">\(
 \vec{\nabla} f=\lambda \vec{\nabla} g \quad \text { and } \quad g(x, y, z)=k .
-$$</p>
+\)</span>$</p>
 <ul class="simple">
-<li><p>For functions of two variables the method is similar but without $z$.</p></li>
-<li><p>To find the local maximum and minimum values of $f$ subject to two constraints $g(x, y, z)=k_{1}$ and $g(x, y, z)=k_{2}$, find the values of $x, y, z, \lambda, \mu$ that simultaneously satisfy the equations</p></li>
+<li><p>For functions of two variables the method is similar but without <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
+<li><p>To find the local maximum and minimum values of <span class="math notranslate nohighlight">\(f\)</span> subject to two constraints <span class="math notranslate nohighlight">\(g(x, y, z)=k_{1}\)</span> and <span class="math notranslate nohighlight">\(g(x, y, z)=k_{2}\)</span>, find the values of <span class="math notranslate nohighlight">\(x, y, z, \lambda, \mu\)</span> that simultaneously satisfy the equations</p></li>
 </ul>
-<p>$$
+<div class="math notranslate nohighlight">
+\[
 \vec{\nabla} f=\lambda \vec{\nabla} g_{1}+\mu \vec{\nabla} g_{2}, \quad g_{1}(x, y, z)=k_{1} \text { and } g_{2}(x, y, z)=k_{2} .
-$$</p>
+\]</div>
 </div>
 <div class="section" id="alternative-presentation">
 <h2>Alternative presentation<a class="headerlink" href="#alternative-presentation" title="Permalink to this headline">¶</a></h2>
-<p>As above, suppose that we want to find the local maximum and minimum values of $f(x, y, z)$ subject to the constraint $g(x, y, z)=k$. An alternative but equivalent approach is to construct a Lagrangian function $\mathcal{L}(x, y, z, \lambda)=f(x, y, z)-\lambda(g(x, y, z)-k)$ and find the values of $x, y, z$ for which all the partial derivatives of $\mathcal{L}\left(\mathcal{L}<em>{x}, \mathcal{L}</em>{y}, \mathcal{L}<em>{z}\right.$ and $\left.\mathcal{L}</em>{\lambda}\right)$ are zero. (This converts the constrained optimization problem into an unconstrained problem.)</p>
+<p>As above, suppose that we want to find the local maximum and minimum values of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span>. An alternative but equivalent approach is to construct a Lagrangian function <span class="math notranslate nohighlight">\(\mathcal{L}(x, y, z, \lambda)=f(x, y, z)-\lambda(g(x, y, z)-k)\)</span> and find the values of <span class="math notranslate nohighlight">\(x, y, z\)</span> for which all the partial derivatives of <span class="math notranslate nohighlight">\(\mathcal{L}\left(\mathcal{L}_{x}, \mathcal{L}_{y}, \mathcal{L}_{z}\right.\)</span> and <span class="math notranslate nohighlight">\(\left.\mathcal{L}_{\lambda}\right)\)</span> are zero. (This converts the constrained optimization problem into an unconstrained problem.)</p>
 </div>
 <div class="section" id="other-notes">
 <h2>Other Notes<a class="headerlink" href="#other-notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>There is not one set way of solving systems of equations - use any method that works.</p></li>
-<li><p>$\vec{\nabla} f=\lambda \vec{\nabla} g$ is a necessary but not a sufficient condition for a solution to exist. In some cases an extreme value may not actually exist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f=\lambda \vec{\nabla} g\)</span> is a necessary but not a sufficient condition for a solution to exist. In some cases an extreme value may not actually exist.</p></li>
 <li><p>In the Lagrange multiplier method, there is no simple way of establishing whether an extremum is a maximum or a minimum, and the step is often omitted. In many practical applications, the nature of the extremum is obvious from the context. If needed, it may be determined by considering a plot of level curves or simply by comparing values.</p></li>
 </ul>
 </div>
