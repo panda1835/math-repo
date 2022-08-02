@@ -366,10 +366,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="double-integral">
 <h2>Double Integral<a class="headerlink" href="#double-integral" title="Permalink to this headline">¶</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(R\)</span> be a rectangular region in the <span class="math notranslate nohighlight">\(x y\)</span>-plane and <span class="math notranslate nohighlight">\(f\)</span> a continuous function over <span class="math notranslate nohighlight">\(R\)</span>. With terms defined as in a double Riemann sum, the double integral of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(R\)</span> is
-$<span class="math notranslate nohighlight">\(
+<p>Let <span class="math notranslate nohighlight">\(R\)</span> be a rectangular region in the <span class="math notranslate nohighlight">\(x y\)</span>-plane and <span class="math notranslate nohighlight">\(f\)</span> a continuous function over <span class="math notranslate nohighlight">\(R\)</span>. With terms defined as in a double Riemann sum, the double integral of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(R\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
 \iint_{R} f(x, y) d A=\lim _{m, n \rightarrow \infty} \sum_{j=1}^{n} \sum_{i=1}^{m} f\left(x_{i j}^{*}, y_{i j}^{*}\right) \cdot \Delta A .
-\)</span>$</p>
+\]</div>
 </div>
 <div class="section" id="interpretations">
 <h2>Interpretations<a class="headerlink" href="#interpretations" title="Permalink to this headline">¶</a></h2>
@@ -390,10 +391,11 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="section" id="fubini-s-theorem">
 <h2>Fubini’s Theorem<a class="headerlink" href="#fubini-s-theorem" title="Permalink to this headline">¶</a></h2>
-<p>If <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> is continuous on <span class="math notranslate nohighlight">\(R=[a, b] \times[c, d]\)</span> then
-$<span class="math notranslate nohighlight">\(
+<p>If <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> is continuous on <span class="math notranslate nohighlight">\(R=[a, b] \times[c, d]\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[
 \iint_{R} f(x, y) d A=\int_{a}^{b}\left(\int_{c}^{d} f(x, y) d y\right) d x=\int_{c}^{d}\left(\int_{a}^{b} f(x, y) d x\right) d y .
-\)</span>$</p>
+\]</div>
 <ul class="simple">
 <li><p>These are called iterated integrals. They can be found by evaluating two single integrals.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\int_{c}^{d} f(x, y) d y\)</span> means <span class="math notranslate nohighlight">\(x\)</span> is held fixed (treated as a constant) and <span class="math notranslate nohighlight">\(f\)</span> is integrated with respect to <span class="math notranslate nohighlight">\(y\)</span> from <span class="math notranslate nohighlight">\(y=c\)</span> to <span class="math notranslate nohighlight">\(y=d\)</span>. This procedure is called partial integration. The result is a function of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
@@ -404,36 +406,42 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="section" id="separable-integrals">
 <h2>Separable Integrals<a class="headerlink" href="#separable-integrals" title="Permalink to this headline">¶</a></h2>
-<p>Consider the special case <span class="math notranslate nohighlight">\(f(x, y)=g(x) h(y)\)</span> on a rectangular region <span class="math notranslate nohighlight">\(R=[a, b] \times[c, d]\)</span>.
-$<span class="math notranslate nohighlight">\(
+<p>Consider the special case <span class="math notranslate nohighlight">\(f(x, y)=g(x) h(y)\)</span> on a rectangular region <span class="math notranslate nohighlight">\(R=[a, b] \times[c, d]\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
 \iint_{R} f(x, y) d A=\int_{a}^{b}\left(\int_{c}^{d} g(x) h(y) d y\right) d x .
-\)</span><span class="math notranslate nohighlight">\(
-In finding the inner integral, \)</span>g(x)<span class="math notranslate nohighlight">\( is treated as a constant so we can write
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>In finding the inner integral, <span class="math notranslate nohighlight">\(g(x)\)</span> is treated as a constant so we can write</p>
+<div class="math notranslate nohighlight">
+\[
 \iint_{R} f(x, y) d A=\int_{a}^{b} g(x)\left(\int_{c}^{d} h(y) d y\right) d x .
-\)</span><span class="math notranslate nohighlight">\(
-The inner integral also yields a constant so we can write
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>The inner integral also yields a constant so we can write</p>
+<div class="math notranslate nohighlight">
+\[
 \iint_{R} f(x, y) d A=\left(\int_{a}^{b} g(x) d x\right) \cdot\left(\int_{c}^{d} h(y) d y\right) .
-\)</span>$
-I.e. in this special case, the double integral can be written as the product of two single integrals.</p>
+\]</div>
+<p>I.e. in this special case, the double integral can be written as the product of two single integrals.</p>
 </div>
 <div class="section" id="double-integrals-over-general-regions">
 <h2>Double integrals over General Regions<a class="headerlink" href="#double-integrals-over-general-regions" title="Permalink to this headline">¶</a></h2>
-<p>For a type I region
-$<span class="math notranslate nohighlight">\(
+<p>For a type I region</p>
+<div class="math notranslate nohighlight">
+\[
 D=\left\{(x, y): a \leq x \leq b, g_{1}(x) \leq y \leq g_{2}(x)\right\}
-\)</span><span class="math notranslate nohighlight">\(
-we have
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[
 \iint_{D} f(x, y) d A=\int_{a}^{b}\left(\int_{g_{1}(x)}^{g_{2}(x)} f(x, y) d y\right) d x
-\)</span>$
-<img alt="image" src="../../_images/img11.jpg" /></p>
-<p>For a type II region
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p><img alt="image" src="../../_images/img11.jpg" /></p>
+<p>For a type II region</p>
+<div class="math notranslate nohighlight">
+\[
 D=\left\{(x, y): h_{1}(y) \leq x \leq h_{2}(y), c \leq y \leq d\right\}
-\)</span>$
-we have</p>
+\]</div>
+<p>we have</p>
 <div class="math notranslate nohighlight">
 \[
 \iint_{D} f(x, y) d A=\int_{c}^{d}\left(\int_{h_{1}(y)}^{h_{2}(y)} f(x, y) d x\right) d y

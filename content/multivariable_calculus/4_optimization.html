@@ -333,13 +333,16 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Critical Points<a class="headerlink" href="#critical-points" title="Permalink to this headline">¶</a></h2>
 <p>Points where the gradient is either <span class="math notranslate nohighlight">\(\overrightarrow{0}\)</span> or undefined are called critical points of the function.</p>
 <ul class="simple">
-<li><p>To find the CPs of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> we therefore need to find <span class="math notranslate nohighlight">\(f_{x}\)</span> and <span class="math notranslate nohighlight">\(f_{y}\)</span> and identify any values of <span class="math notranslate nohighlight">\(x, y\)</span> for which one of the partial derivatives does not exist or for which both partial derivatives are simultaneously zero, that is the solution of the system of equations
-$<span class="math notranslate nohighlight">\(
+<li><p>To find the CPs of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> we therefore need to find <span class="math notranslate nohighlight">\(f_{x}\)</span> and <span class="math notranslate nohighlight">\(f_{y}\)</span> and identify any values of <span class="math notranslate nohighlight">\(x, y\)</span> for which one of the partial derivatives does not exist or for which both partial derivatives are simultaneously zero, that is the solution of the system of equations</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
 &amp;f_{x}(x, y)=0 \\
 &amp;f_{y}(x, y)=0
 \end{aligned}
-\)</span>$</p></li>
+\end{split}\]</div>
+<ul class="simple">
 <li><p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> we look for points where one of the partial derivatives does not exist or <span class="math notranslate nohighlight">\(f_{x}(x, y, z)=f_{y}(x, y, z)=f_{z}(x, y, z)=0\)</span>.</p></li>
 </ul>
 </div>
@@ -351,13 +354,10 @@ $<span class="math notranslate nohighlight">\(
 D=f_{x x}\left(x_{0}, y_{0}\right) f_{y y}\left(x_{0}, y_{0}\right)-\left(f_{x y}\left(x_{0}, y_{0}\right)\right)^{2} .
 \]</div>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(f_{x x}\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)&gt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\(\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)\)</span>.</p>
-<ul>
+<li><p>If <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(f_{x x}\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)&gt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\(\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(D&gt;0\)</span> and <span class="math notranslate nohighlight">\(f_{x x}\left(x_{0}, y_{0}\right)&lt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a local maximum at <span class="math notranslate nohighlight">\(\left(x_{0}, y_{\mathrm{o}}\right)\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(D&lt;0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> has a saddle point at <span class="math notranslate nohighlight">\(\left(x_{0}, y_{\mathrm{o}}\right)\)</span>.</p></li>
 <li><p>If <span class="math notranslate nohighlight">\(D=0\)</span>, anything can happen: <span class="math notranslate nohighlight">\(f\)</span> can have a local maximum, or a local minimum, or a saddle point, or none of these, at <span class="math notranslate nohighlight">\(\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)\)</span>.</p></li>
-</ul>
-</li>
 </ul>
 </div>
 <div class="section" id="the-extreme-value-theorem-for-multivariable-functions">
@@ -371,10 +371,11 @@ D=f_{x x}\left(x_{0}, y_{0}\right) f_{y y}\left(x_{0}, y_{0}\right)-\left(f_{x y
 </div>
 <div class="section" id="the-method-of-lagrange-multipliers">
 <h2>The Method of Lagrange Multipliers<a class="headerlink" href="#the-method-of-lagrange-multipliers" title="Permalink to this headline">¶</a></h2>
-<p>Suppose <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> and <span class="math notranslate nohighlight">\(g(x, y, z)\)</span> are differentiable and <span class="math notranslate nohighlight">\(\vec{\nabla} g \neq \overrightarrow{\mathbf{0}}\)</span> when <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span>. To find the local maximum and minimum values of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span> (if these exist), find the values of <span class="math notranslate nohighlight">\(x, y, z\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> that simultaneously satisfy the equations
-$<span class="math notranslate nohighlight">\(
+<p>Suppose <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> and <span class="math notranslate nohighlight">\(g(x, y, z)\)</span> are differentiable and <span class="math notranslate nohighlight">\(\vec{\nabla} g \neq \overrightarrow{\mathbf{0}}\)</span> when <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span>. To find the local maximum and minimum values of <span class="math notranslate nohighlight">\(f\)</span> subject to the constraint <span class="math notranslate nohighlight">\(g(x, y, z)=k\)</span> (if these exist), find the values of <span class="math notranslate nohighlight">\(x, y, z\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> that simultaneously satisfy the equations</p>
+<div class="math notranslate nohighlight">
+\[
 \vec{\nabla} f=\lambda \vec{\nabla} g \quad \text { and } \quad g(x, y, z)=k .
-\)</span>$</p>
+\]</div>
 <ul class="simple">
 <li><p>For functions of two variables the method is similar but without <span class="math notranslate nohighlight">\(z\)</span>.</p></li>
 <li><p>To find the local maximum and minimum values of <span class="math notranslate nohighlight">\(f\)</span> subject to two constraints <span class="math notranslate nohighlight">\(g(x, y, z)=k_{1}\)</span> and <span class="math notranslate nohighlight">\(g(x, y, z)=k_{2}\)</span>, find the values of <span class="math notranslate nohighlight">\(x, y, z, \lambda, \mu\)</span> that simultaneously satisfy the equations</p></li>

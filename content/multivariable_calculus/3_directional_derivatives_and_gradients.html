@@ -208,6 +208,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/panda1835/capstone/master?urlpath=tree/content/multivariable_calculus/3_directional_derivatives_and_gradients.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -299,10 +316,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="directional-derivative">
 <h2>Directional Derivative<a class="headerlink" href="#directional-derivative" title="Permalink to this headline">¶</a></h2>
-<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is, provided the limit exists,
-$<span class="math notranslate nohighlight">\(
+<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is, provided the limit exists,</p>
+<div class="math notranslate nohighlight">
+\[
 D_{\vec{u}} f(a, b)=\lim _{h \rightarrow 0} \frac{f\left(a+h u_{1}, b+h u_{2}\right)-f(a, b)}{h} .
-\)</span>$</p>
+\]</div>
 <p>Hence the directional derivative of a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -323,14 +341,16 @@ D_{\vec{u}} f(a, b)=\overrightarrow{\boldsymbol{\nabla}} f(a, b) \cdot \hat{\bol
 </div>
 <div class="section" id="functions-of-3-variables">
 <h2>Functions of 3 Variables<a class="headerlink" href="#functions-of-3-variables" title="Permalink to this headline">¶</a></h2>
-<p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is defined by
-$<span class="math notranslate nohighlight">\(
+<p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is defined by</p>
+<div class="math notranslate nohighlight">
+\[
 \vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}, f_{z}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}+\frac{\partial f}{\partial z} \mathbf{k}
-\)</span>$</p>
-<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\)</span> <span class="math notranslate nohighlight">\(\left\langle u_{1}, u_{2}, u_{3}\right\rangle\)</span> is
-$<span class="math notranslate nohighlight">\(
+\]</div>
+<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\)</span> <span class="math notranslate nohighlight">\(\left\langle u_{1}, u_{2}, u_{3}\right\rangle\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
 D_{\vec{u}} f(a, b, c)=\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b, c) u_{1}+f_{y}(a, b, c) u_{2}+f_{z}(a, b, c) u_{3} .
-\)</span>$</p>
+\]</div>
 <p>If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span> is perpendicular to the level surface of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span></p></li>
