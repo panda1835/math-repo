@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimization &#8212; My Math Hub</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Double Integrals" href="5_double_integrals.html" />
+    <link rel="prev" title="Directional Derivatives and the Gradient Vector" href="3_directional_derivatives_and_gradients.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My Math Hub</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_partial_derivatives.html">
+   Partial Derivatives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_second_derivatives.html">
+   Second Derivatives and Chain Rule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_directional_derivatives_and_gradients.html">
+   Directional Derivatives and the Gradient Vector
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Optimization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5_double_integrals.html">
+   Double Integrals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6_double_integrals_in_polar.html">
+   Double Integrals in Polar Coordinates
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/multivariable_calculus/4_optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/panda1835/capstone"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/panda1835/capstone/issues/new?title=Issue%20on%20page%20%2Fcontent/multivariable_calculus/4_optimization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extrema-definitions">
+   Extrema - Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#critical-points">
+   Critical Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#second-derivative-test">
+   Second Derivative Test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-extreme-value-theorem-for-multivariable-functions">
+   The Extreme Value Theorem for Multivariable Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-method-of-lagrange-multipliers">
+   The Method of Lagrange Multipliers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-presentation">
+   Alternative presentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-notes">
+   Other Notes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Optimization</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extrema-definitions">
+   Extrema - Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#critical-points">
+   Critical Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#second-derivative-test">
+   Second Derivative Test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-extreme-value-theorem-for-multivariable-functions">
+   The Extreme Value Theorem for Multivariable Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-method-of-lagrange-multipliers">
+   The Method of Lagrange Multipliers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-presentation">
+   Alternative presentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-notes">
+   Other Notes
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="optimization">
+<h1>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="extrema-definitions">
+<h2>Extrema - Definitions<a class="headerlink" href="#extrema-definitions" title="Permalink to this headline">¶</a></h2>
+<p>Consider a function $f$ defined on a region $R$.</p>
+<ul class="simple">
+<li><p>$f$ has an local maximum at the point $P_{0}$ if $f\left(P_{0}\right) \geq f(P)$ for all points $P$ near $P_{0}$.</p></li>
+<li><p>$f$ has an local minimum at the point $P_{0}$ if $f\left(P_{0}\right) \leq f(P)$ for all points $P$ near $P_{0}$.</p></li>
+<li><p>$f$ has an absolute maximum on $R$ at the point $P_{0}$ if $f\left(P_{0}\right) \geq f(P)$ for all points $P$ in $R$.</p></li>
+<li><p>$f$ has an absolute minimum on $R$ at the point $P_{0}$ if $f\left(P_{0}\right) \leq f(P)$ for all points $P$ in $R$.</p></li>
+</ul>
+</div>
+<div class="section" id="critical-points">
+<h2>Critical Points<a class="headerlink" href="#critical-points" title="Permalink to this headline">¶</a></h2>
+<p>Points where the gradient is either $\overrightarrow{0}$ or undefined are called critical points of the function.</p>
+<ul class="simple">
+<li><p>To find the CPs of a function $f(x, y)$ we therefore need to find $f_{x}$ and $f_{y}$ and identify any values of $x, y$ for which one of the partial derivatives does not exist or for which both partial derivatives are simultaneously zero, that is the solution of the system of equations
+$$
+\begin{aligned}
+&amp;f_{x}(x, y)=0 \
+&amp;f_{y}(x, y)=0
+\end{aligned}
+$$</p></li>
+<li><p>Similarly for a function $f(x, y, z)$ we look for points where one of the partial derivatives does not exist or $f_{x}(x, y, z)=f_{y}(x, y, z)=f_{z}(x, y, z)=0$.</p></li>
+</ul>
+</div>
+<div class="section" id="second-derivative-test">
+<h2>Second Derivative Test<a class="headerlink" href="#second-derivative-test" title="Permalink to this headline">¶</a></h2>
+<p>The second-derivative test for local extrema: Suppose $\left(x_{0}, y_{0}\right)$ is a point where $\operatorname{grad} f\left(x_{0}, y_{0}\right)=\overrightarrow{0}$. Let</p>
+<p>$$
+D=f_{x x}\left(x_{0}, y_{0}\right) f_{y y}\left(x_{0}, y_{0}\right)-\left(f_{x y}\left(x_{0}, y_{0}\right)\right)^{2} .
+$$</p>
+<ul class="simple">
+<li><p>If $D&gt;0$ and $f_{x x}\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)&gt;0$, then $f$ has a local minimum at $\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)$.</p>
+<ul>
+<li><p>If $D&gt;0$ and $f_{x x}\left(x_{0}, y_{0}\right)&lt;0$, then $f$ has a local maximum at $\left(x_{0}, y_{\mathrm{o}}\right)$.</p></li>
+<li><p>If $D&lt;0$, then $f$ has a saddle point at $\left(x_{0}, y_{\mathrm{o}}\right)$.</p></li>
+<li><p>If $D=0$, anything can happen: $f$ can have a local maximum, or a local minimum, or a saddle point, or none of these, at $\left(x_{\mathrm{o}}, y_{\mathrm{o}}\right)$.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-extreme-value-theorem-for-multivariable-functions">
+<h2>The Extreme Value Theorem for Multivariable Functions<a class="headerlink" href="#the-extreme-value-theorem-for-multivariable-functions" title="Permalink to this headline">¶</a></h2>
+<p>If a function $z=f(x, y)$ is continuous on a closed, bounded region $R$ then it has an absolute maximum and an absolute minimum in $R$.</p>
+<ul class="simple">
+<li><p>These absolute extrema occur either at critical points inside $R$ or on the boundary of $R$.</p></li>
+<li><p>A closed region is a region which contains all its boundary points.</p></li>
+<li><p>A bounded region is a region which does not stretch to infinity in any direction. (In $R^{2}$ it is a region contained within some disk.)</p></li>
+</ul>
+</div>
+<div class="section" id="the-method-of-lagrange-multipliers">
+<h2>The Method of Lagrange Multipliers<a class="headerlink" href="#the-method-of-lagrange-multipliers" title="Permalink to this headline">¶</a></h2>
+<p>Suppose $f(x, y, z)$ and $g(x, y, z)$ are differentiable and $\vec{\nabla} g \neq \overrightarrow{\mathbf{0}}$ when $g(x, y, z)=k$. To find the local maximum and minimum values of $f$ subject to the constraint $g(x, y, z)=k$ (if these exist), find the values of $x, y, z$, and $\lambda$ that simultaneously satisfy the equations
+$$
+\vec{\nabla} f=\lambda \vec{\nabla} g \quad \text { and } \quad g(x, y, z)=k .
+$$</p>
+<ul class="simple">
+<li><p>For functions of two variables the method is similar but without $z$.</p></li>
+<li><p>To find the local maximum and minimum values of $f$ subject to two constraints $g(x, y, z)=k_{1}$ and $g(x, y, z)=k_{2}$, find the values of $x, y, z, \lambda, \mu$ that simultaneously satisfy the equations</p></li>
+</ul>
+<p>$$
+\vec{\nabla} f=\lambda \vec{\nabla} g_{1}+\mu \vec{\nabla} g_{2}, \quad g_{1}(x, y, z)=k_{1} \text { and } g_{2}(x, y, z)=k_{2} .
+$$</p>
+</div>
+<div class="section" id="alternative-presentation">
+<h2>Alternative presentation<a class="headerlink" href="#alternative-presentation" title="Permalink to this headline">¶</a></h2>
+<p>As above, suppose that we want to find the local maximum and minimum values of $f(x, y, z)$ subject to the constraint $g(x, y, z)=k$. An alternative but equivalent approach is to construct a Lagrangian function $\mathcal{L}(x, y, z, \lambda)=f(x, y, z)-\lambda(g(x, y, z)-k)$ and find the values of $x, y, z$ for which all the partial derivatives of $\mathcal{L}\left(\mathcal{L}<em>{x}, \mathcal{L}</em>{y}, \mathcal{L}<em>{z}\right.$ and $\left.\mathcal{L}</em>{\lambda}\right)$ are zero. (This converts the constrained optimization problem into an unconstrained problem.)</p>
+</div>
+<div class="section" id="other-notes">
+<h2>Other Notes<a class="headerlink" href="#other-notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>There is not one set way of solving systems of equations - use any method that works.</p></li>
+<li><p>$\vec{\nabla} f=\lambda \vec{\nabla} g$ is a necessary but not a sufficient condition for a solution to exist. In some cases an extreme value may not actually exist.</p></li>
+<li><p>In the Lagrange multiplier method, there is no simple way of establishing whether an extremum is a maximum or a minimum, and the step is often omitted. In many practical applications, the nature of the extremum is obvious from the context. If needed, it may be determined by considering a plot of level curves or simply by comparing values.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/multivariable_calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="3_directional_derivatives_and_gradients.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Directional Derivatives and the Gradient Vector</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="5_double_integrals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Double Integrals</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Le Hoang Phuc<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
