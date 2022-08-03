@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Double Integrals" href="5_double_integrals.html" />
@@ -190,11 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/panda1835/capstone"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/panda1835/math-hub"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/panda1835/capstone/issues/new?title=Issue%20on%20page%20%2Fcontent/multivariable_calculus/6_double_integrals_in_polar.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/panda1835/math-hub/issues/new?title=Issue%20on%20page%20%2Fcontent/multivariable_calculus/6_double_integrals_in_polar.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -215,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/panda1835/capstone/master?urlpath=tree/content/multivariable_calculus/6_double_integrals_in_polar.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/panda1835/math-hub/master?urlpath=tree/content/multivariable_calculus/6_double_integrals_in_polar.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -300,27 +302,27 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Double Integrals in Polar Coordinates<a class="headerlink" href="#double-integrals-in-polar-coordinates" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="polar-coordinates">
 <h2>Polar coordinates<a class="headerlink" href="#polar-coordinates" title="Permalink to this headline">¶</a></h2>
-<p><img alt="img" src="../../_images/img12.jpg" /></p>
+<p><img alt="img" src="../../_images/img11.jpg" /></p>
 </div>
 <div class="section" id="conversions">
 <h2>Conversions<a class="headerlink" href="#conversions" title="Permalink to this headline">¶</a></h2>
-<p><img alt="img" src="../../_images/img22.jpg" /></p>
+<p><img alt="img" src="../../_images/img21.jpg" /></p>
 <p>Note:</p>
 <ul class="simple">
-<li><p>For a given $(x, y)$, the equation $\tan \theta=\frac{y}{x}$ has two solutions in the range $0 \leq \theta \leq 2 \pi$.
-You must choose $\theta$ so that the point lies in the correct quadrant, for examply by plotting the point.</p></li>
-<li><p>That is, you may need to take $\theta=\arctan \left(\frac{y}{x}\right)$ or $\theta=\arctan \left(\frac{y}{x}\right)+\pi$.</p></li>
+<li><p>For a given <span class="math notranslate nohighlight">\((x, y)\)</span>, the equation <span class="math notranslate nohighlight">\(\tan \theta=\frac{y}{x}\)</span> has two solutions in the range <span class="math notranslate nohighlight">\(0 \leq \theta \leq 2 \pi\)</span>.
+You must choose <span class="math notranslate nohighlight">\(\theta\)</span> so that the point lies in the correct quadrant, for examply by plotting the point.</p></li>
+<li><p>That is, you may need to take <span class="math notranslate nohighlight">\(\theta=\arctan \left(\frac{y}{x}\right)\)</span> or <span class="math notranslate nohighlight">\(\theta=\arctan \left(\frac{y}{x}\right)+\pi\)</span>.</p></li>
 </ul>
 </div>
 <div class="section" id="id1">
 <h2>Double Integrals in Polar Coordinates<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p><img alt="img" src="../../_images/img3.jpg" /></p>
 <ul class="simple">
-<li><p>The area element in Cartesian coordinates is $d A=d x d y$.</p></li>
-<li><p>In polar coordinates it is $d A=r d r d \theta$.</p></li>
-<li><p>Hence a double integral $\iint_{D} f(x, y) d A$ in Cartesian coordinates can be converted to a double integral in polar coordinates $\iint_{D} f(r \cos \theta, r \sin \theta) r d r d \theta$.</p></li>
+<li><p>The area element in Cartesian coordinates is <span class="math notranslate nohighlight">\(d A=d x d y\)</span>.</p></li>
+<li><p>In polar coordinates it is <span class="math notranslate nohighlight">\(d A=r d r d \theta\)</span>.</p></li>
+<li><p>Hence a double integral <span class="math notranslate nohighlight">\(\iint_{D} f(x, y) d A\)</span> in Cartesian coordinates can be converted to a double integral in polar coordinates <span class="math notranslate nohighlight">\(\iint_{D} f(r \cos \theta, r \sin \theta) r d r d \theta\)</span>.</p></li>
 </ul>
-<p>Note: Converting a double integral from Cartesian to polar coordinates is one example of performing a change of variables in a multiple integral. More generally, changes of variables are performed using what is known as a Jacobian - see Thomas section $15.8$ (p953-958 cover the $2 \mathrm{D}$ case).</p>
+<p>Note: Converting a double integral from Cartesian to polar coordinates is one example of performing a change of variables in a multiple integral. More generally, changes of variables are performed using what is known as a Jacobian - see Thomas section <span class="math notranslate nohighlight">\(15.8\)</span> (p953-958 cover the <span class="math notranslate nohighlight">\(2 \mathrm{D}\)</span> case).</p>
 </div>
 </div>
 
