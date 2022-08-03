@@ -51,11 +51,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Directional Derivatives and the Gradient Vector" href="3_directional_derivatives_and_gradients.html" />
+    <link rel="next" title="Directional Derivatives and Gradient Vector" href="3_directional_derivatives_and_gradients.html" />
     <link rel="prev" title="Partial Derivatives" href="1_partial_derivatives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -118,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3_directional_derivatives_and_gradients.html">
-   Directional Derivatives and the Gradient Vector
+   Directional Derivatives and Gradient Vector
   </a>
  </li>
  <li class="toctree-l1">
@@ -347,70 +345,61 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Second-Order Partial Derivatives and Chain Rule<a class="headerlink" href="#second-order-partial-derivatives-and-chain-rule" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="second-derivatives">
 <h2>Second Derivatives<a class="headerlink" href="#second-derivatives" title="Permalink to this headline">¶</a></h2>
-<p>A function <span class="math notranslate nohighlight">\(f(x, y)\)</span> has four partial derivatives:</p>
-<div class="math notranslate nohighlight">
-\[\left(f_{x}\right)_{x}=f_{x x}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial^{2} f}{\partial x^{2}}\]</div>
-<div class="math notranslate nohighlight">
-\[\left(f_{x}\right)_{y}=f_{x y}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial^{2} f}{\partial y \partial x}\]</div>
-<div class="math notranslate nohighlight">
-\[\left(f_{y}\right)_{x}=f_{y x}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial^{2} f}{\partial x \partial y}\]</div>
-<div class="math notranslate nohighlight">
-\[\left(f_{y}\right)_{y}=f_{y y}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial^{2} f}{\partial y^{2}}\]</div>
+<p>A function $f(x, y)$ has four partial derivatives:</p>
+<p>$$\left(f_{x}\right)<em>{x}=f</em>{x x}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial^{2} f}{\partial x^{2}}$$</p>
+<p>$$\left(f_{x}\right)<em>{y}=f</em>{x y}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)=\frac{\partial^{2} f}{\partial y \partial x}$$</p>
+<p>$$\left(f_{y}\right)<em>{x}=f</em>{y x}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial^{2} f}{\partial x \partial y}$$</p>
+<p>$$\left(f_{y}\right)<em>{y}=f</em>{y y}=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial^{2} f}{\partial y^{2}}$$</p>
 </div>
 <div class="section" id="clairaut-s-theorem-the-mixed-derivative-theorem">
 <h2>Clairaut’s Theorem (The Mixed Derivative Theorem)<a class="headerlink" href="#clairaut-s-theorem-the-mixed-derivative-theorem" title="Permalink to this headline">¶</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a function of several variables for which the partial derivatives <span class="math notranslate nohighlight">\(f_{x y}\)</span> and <span class="math notranslate nohighlight">\(f_{y x}\)</span> are continuous near the point <span class="math notranslate nohighlight">\((a, b)\)</span>. Then</p>
-<div class="math notranslate nohighlight">
-\[
+<p>Let $f$ be a function of several variables for which the partial derivatives $f_{x y}$ and $f_{y x}$ are continuous near the point $(a, b)$. Then</p>
+<p>$$
 f_{x y}(a, b)=f_{y x}(a, b) .
-\]</div>
+$$</p>
 <p><strong>Note</strong>: the mixed derivatives can be different when the continuity conditions are not satisfied.</p>
-<p>Extensions of Clairaut’s theorem apply to higher partial derivatives and to functions of more variables. For example, for <span class="math notranslate nohighlight">\(f(x, y)\)</span> provided all the derivatives are continuous, we also have</p>
-<div class="math notranslate nohighlight">
-\[
+<p>Extensions of Clairaut’s theorem apply to higher partial derivatives and to functions of more variables. For example, for $f(x, y)$ provided all the derivatives are continuous, we also have</p>
+<p>$$
 f_{x y z}=f_{x z y}=f_{y x z}=f_{y z x}=f_{z x y}=f_{z y x}
-\]</div>
+$$</p>
 </div>
 <div class="section" id="the-chain-rule-2-variables">
 <h2>The Chain Rule (2 Variables)<a class="headerlink" href="#the-chain-rule-2-variables" title="Permalink to this headline">¶</a></h2>
-<p>If <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> where <span class="math notranslate nohighlight">\(x=g(t)\)</span> and <span class="math notranslate nohighlight">\(y=h(t)\)</span>, then</p>
-<div class="math notranslate nohighlight">
-\[
+<p>If $z=f(x, y)$ where $x=g(t)$ and $y=h(t)$, then</p>
+<p>$$
 \frac{d z}{d t}=\frac{\partial z}{\partial x} \frac{d x}{d t}+\frac{\partial z}{\partial y} \frac{d y}{d t}
-\]</div>
+$$</p>
 <p>(provided the derivatives exist).</p>
 <p>Proof in pg. 801</p>
 <div class="section" id="tree-diagrams">
 <h3>Tree Diagrams<a class="headerlink" href="#tree-diagrams" title="Permalink to this headline">¶</a></h3>
 <p>Chain rule can be helpfully represented using a tree diagram.</p>
 <p>Note: Note carefully which derivatives are partial derivatives and which are ordinary derivatives.</p>
-<img src="../../media/mvc/sd/img2.jpg" style="width:400px;"></div>
+<img alt="../../_images/img23.jpg" src="../../_images/img23.jpg" />
+</div>
 </div>
 <div class="section" id="the-chain-rule-general-version">
 <h2>The Chain Rule (General Version)<a class="headerlink" href="#the-chain-rule-general-version" title="Permalink to this headline">¶</a></h2>
-<p>If <span class="math notranslate nohighlight">\(z=f\left(x_{1}, x_{2}, \ldots, x_{n}\right)\)</span> and <span class="math notranslate nohighlight">\(x_{i}=g\left(t_{1}, t_{2}, \ldots, t_{m}\right)\)</span> then</p>
-<div class="math notranslate nohighlight">
-\[
+<p>If $z=f\left(x_{1}, x_{2}, \ldots, x_{n}\right)$ and $x_{i}=g\left(t_{1}, t_{2}, \ldots, t_{m}\right)$ then</p>
+<p>$$
 \frac{\partial z}{\partial t_{j}}=\frac{\partial z}{\partial x_{1}} \frac{\partial x_{1}}{\partial t_{j}}+\frac{\partial z}{\partial x_{2}} \frac{\partial x_{2}}{\partial t_{j}}+\ldots+\frac{\partial z}{\partial x_{n}} \frac{\partial x_{n}}{\partial t_{j}}
-\]</div>
+$$</p>
 <p>(provided the derivatives exist).</p>
 </div>
 <div class="section" id="implicit-differentiation">
 <h2>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(F(x, y)\)</span> is differentiable and the equation <span class="math notranslate nohighlight">\(F(x, y)=0\)</span> defines <span class="math notranslate nohighlight">\(y\)</span> as a differentiable function of <span class="math notranslate nohighlight">\(x\)</span>, then at any point where <span class="math notranslate nohighlight">\(F_{y} \neq 0\)</span>,</p></li>
+<li><p>If $F(x, y)$ is differentiable and the equation $F(x, y)=0$ defines $y$ as a differentiable function of $x$, then at any point where $F_{y} \neq 0$,</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \frac{d y}{d x}=-\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}=-\frac{F_{x}}{F_{y}}
-\]</div>
+$$</p>
 <ul class="simple">
-<li><p>If <span class="math notranslate nohighlight">\(F(x, y, z)\)</span> is differentiable and <span class="math notranslate nohighlight">\(F(x, y, z)=0\)</span> defines <span class="math notranslate nohighlight">\(z\)</span> as a differentiable function of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, then at any point where <span class="math notranslate nohighlight">\(F_{z} \neq 0\)</span>,</p></li>
+<li><p>If $F(x, y, z)$ is differentiable and $F(x, y, z)=0$ defines $z$ as a differentiable function of $x$ and $y$, then at any point where $F_{z} \neq 0$,</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \frac{\partial z}{\partial x}=-\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}}=-\frac{F_{x}}{F_{z}} \quad \text { and } \quad \frac{\partial z}{\partial y}=-\frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}}=-\frac{F_{y}}{F_{z}} .
-\]</div>
+$$</p>
 </div>
 <div class="section" id="differentiability">
 <h2>Differentiability<a class="headerlink" href="#differentiability" title="Permalink to this headline">¶</a></h2>
@@ -453,7 +442,7 @@ f_{x y z}=f_{x z y}=f_{y x z}=f_{y z x}=f_{z x y}=f_{z y x}
     <a class='right-next' id="next-link" href="3_directional_derivatives_and_gradients.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Directional Derivatives and the Gradient Vector</p>
+        <p class="prev-next-title">Directional Derivatives and Gradient Vector</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
