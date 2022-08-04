@@ -55,8 +55,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Partial Derivatives" href="1_partial_derivatives.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -100,44 +98,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_partial_derivatives.html">
-   Partial Derivatives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2_second_derivatives.html">
-   Second-Order Partial Derivatives and Chain Rule
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_directional_derivatives_and_gradients.html">
-   Directional Derivatives and Gradient Vector
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4_optimization.html">
-   Optimization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5_double_integrals.html">
-   Double Integrals
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="6_double_integrals_in_polar.html">
-   Double Integrals in Polar Coordinates
-  </a>
- </li>
-</ul>
-
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -241,8 +201,23 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graphs-level-curves-and-contours-of-functions-of-two-variables">
-   Graphs, level Curves, and Contours of Functions of two Variables
+  <a class="reference internal nav-link" href="#lines-regions-and-surfaces">
+   Lines, regions and surfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#traces-and-level-curves">
+   Traces and Level Curves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-more-variables">
+   Functions of more variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits-continuity">
+   Limits &amp; Continuity
   </a>
  </li>
 </ul>
@@ -266,8 +241,23 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graphs-level-curves-and-contours-of-functions-of-two-variables">
-   Graphs, level Curves, and Contours of Functions of two Variables
+  <a class="reference internal nav-link" href="#lines-regions-and-surfaces">
+   Lines, regions and surfaces
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#traces-and-level-curves">
+   Traces and Level Curves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-of-more-variables">
+   Functions of more variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits-continuity">
+   Limits &amp; Continuity
   </a>
  </li>
 </ul>
@@ -281,11 +271,54 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="graphs-level-curves-and-contours-of-functions-of-two-variables">
-<h2>Graphs, level Curves, and Contours of Functions of two Variables<a class="headerlink" href="#graphs-level-curves-and-contours-of-functions-of-two-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lines-regions-and-surfaces">
+<h2>Lines, regions and surfaces<a class="headerlink" href="#lines-regions-and-surfaces" title="Permalink to this headline">¶</a></h2>
+<p>We know that in <span class="math notranslate nohighlight">\(\boldsymbol{R}^{2}\)</span>,</p>
+<ul class="simple">
+<li><p>a single Cartesian equation represents a line or curve, e.g. <span class="math notranslate nohighlight">\(x=2, y=2 x+1, x^{2}+y^{2}=9\)</span></p></li>
+<li><p>a single inequality represents a region, e.g. <span class="math notranslate nohighlight">\(x&gt;2, x^{2}+y^{2} \leq 1\)</span></p></li>
+<li><p>two equations represent the intersection of two curves, usually a point, e.g. <span class="math notranslate nohighlight">\(x=2\)</span> and <span class="math notranslate nohighlight">\(y=2 x+1\)</span> at the point <span class="math notranslate nohighlight">\(x=2, y=5\)</span>.</p></li>
+</ul>
+<p>In <span class="math notranslate nohighlight">\(R^{3}\)</span></p>
+<ul class="simple">
+<li><p>a single equation represents a surface</p></li>
+<li><p>a single inequality represents a region</p></li>
+<li><p>two equations represent the intersection of two surfaces, usually a curve.</p></li>
+</ul>
+</div>
+<div class="section" id="traces-and-level-curves">
+<h2>Traces and Level Curves<a class="headerlink" href="#traces-and-level-curves" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A trace is the cross-section of a surface with a plane.</p></li>
+<li><p>For a surface <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> we commonly consider vertical traces:</p>
+<ul>
+<li><p>curves on which <span class="math notranslate nohighlight">\(x=c_{1}\)</span> and <span class="math notranslate nohighlight">\(z(y)=f\left(c_{1}, y\right)\)</span></p></li>
+<li><p>curves on which <span class="math notranslate nohighlight">\(y=c_{2}\)</span> and <span class="math notranslate nohighlight">\(z(x)=f\left(x, c_{2}\right)\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Horizontal traces <span class="math notranslate nohighlight">\(z=f(x, y)=k\)</span> are more often called level curves or contours.
+Note that if we lift contours and plot them at the appropriate heights, we get a picture of the surface itself.</p></li>
+</ul>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/img2.png"><img alt="Thomas's Calculus" class="bg-primary mb-1 align-center" src="../../_images/img2.png" style="width: 200px;" /></a>
 <p>The set of points in the plane where a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> has a constant value <span class="math notranslate nohighlight">\(f(x, y) = c\)</span> is called a <strong>level curve</strong> of <span class="math notranslate nohighlight">\(f\)</span>. The set of all points <span class="math notranslate nohighlight">\((x, y, f(x, y))\)</span> in space, for <span class="math notranslate nohighlight">\((x, y)\)</span> in the domain of <span class="math notranslate nohighlight">\(f\)</span>, is called the graph of <span class="math notranslate nohighlight">\(f\)</span>. The graph of <span class="math notranslate nohighlight">\(f\)</span> is also called the surface <span class="math notranslate nohighlight">\(z = f(x, y)\)</span>.</p>
-<p><img alt="image" src="../../_images/img1.jpeg" /></p>
-<iframe src="https://www.geogebra.org/3d/kxyg63as?embed" width="400" height="300" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe></div>
+<a class="bg-primary mb-1 reference internal image-reference" href="../../_images/img1.jpeg"><img alt="Thomas's Calculus" class="bg-primary mb-1 align-center" src="../../_images/img1.jpeg" style="width: 200px;" /></a>
+</div>
+<div class="section" id="functions-of-more-variables">
+<h2>Functions of more variables<a class="headerlink" href="#functions-of-more-variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A function <span class="math notranslate nohighlight">\(f\)</span> of three independent variables is a rule that assigns to each ordered triple <span class="math notranslate nohighlight">\((x, y, z)\)</span> in a domain <span class="math notranslate nohighlight">\(D\)</span> exactly one real number <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> in a set <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+<li><p>A function <span class="math notranslate nohighlight">\(f\)</span> of <span class="math notranslate nohighlight">\(n\)</span> independent variables is a rule that assigns to each ordered <span class="math notranslate nohighlight">\(n\)</span>-tuple <span class="math notranslate nohighlight">\(\left(x_{1}, x_{2}, \ldots x_{n}\right)\)</span> in a domain <span class="math notranslate nohighlight">\(D\)</span> exactly one real number <span class="math notranslate nohighlight">\(f\left(x_{1}, x_{2}, \ldots x_{n}\right)\)</span> in a set <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="limits-continuity">
+<h2>Limits &amp; Continuity<a class="headerlink" href="#limits-continuity" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Notions of limits and continuity are generally similar to the one-variable case except that a point in <span class="math notranslate nohighlight">\(R^{2}\)</span> can be approached along an infinite number of different paths.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\lim _{(x, y) \rightarrow(a, b)} f(x, y)\)</span> takes different values as <span class="math notranslate nohighlight">\((a, b)\)</span> is approached along two different paths then the limit does not exist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x, y)\)</span> is continuous at <span class="math notranslate nohighlight">\((a, b)\)</span> if and only if <span class="math notranslate nohighlight">\(\lim _{(x, y) \rightarrow(a, b)} f(x, y)=f(a, b)\)</span>.</p></li>
+<li><p>Graphically, a function is continuous where the surface has no break, hole or jump. For more details, see textbooks (or work on your own through Active Calculus 10.1)</p></li>
+</ul>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -312,21 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="1_partial_derivatives.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Partial Derivatives</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
