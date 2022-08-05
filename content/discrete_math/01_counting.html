@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Probability 101 &#8212; My Math Hub</title>
+    <title>Counting &#8212; My Math Hub</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -49,10 +49,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Random Variables" href="../probability/04_random_variables.html" />
-    <link rel="prev" title="Double Integrals in Polar Coordinates" href="../multivariable_calculus/6_double_integrals_in_polar.html" />
+    <link rel="next" title="Multivariable Calculus" href="../chapter_name/multivariable_calculus.html" />
+    <link rel="prev" title="Discrete Math" href="../chapter_name/discrete_math.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,19 +119,19 @@ const thebe_selector_output = ".output, .cell_output"
   Discrete Math
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="discrete_math.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_name/discrete_math.html">
    Discrete Math
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../discrete_math/01_counting.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Counting
     </a>
    </li>
@@ -143,7 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="multivariable_calculus.html">
+  <a class="reference internal" href="../chapter_name/multivariable_calculus.html">
    Multivariable Calculus
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -195,12 +197,12 @@ const thebe_selector_output = ".output, .cell_output"
   Probability
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter_name/intro_probability.html">
    Probability 101
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
@@ -303,7 +305,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter_name/intro_probability.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/discrete_math/01_counting.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -331,7 +333,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/chapter_name/intro_probability.md"
+        <a href="../../_sources/content/discrete_math/01_counting.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -342,7 +344,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -380,7 +382,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Probability 101</h1>
+                <h1>Counting</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -392,13 +394,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="probability-101">
-<h1>Probability 101<a class="headerlink" href="#probability-101" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../probability/04_random_variables.html">Random Variables</a></li>
-</ul>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="counting">
+<h1>Counting<a class="headerlink" href="#counting" title="Permalink to this headline">#</a></h1>
+<p>Multiplication Rule</p>
+<p>Let’s say we have a compound experiment (an experiment with multiple components). If the 1st component has <span class="math notranslate nohighlight">\(n_1\)</span> possible outcomes, the 2nd component has <span class="math notranslate nohighlight">\(n_2\)</span> possible outcomes, <span class="math notranslate nohighlight">\(\dots\)</span>, and the <span class="math notranslate nohighlight">\(r\)</span>-th component has <span class="math notranslate nohighlight">\(n_r\)</span> possible outcomes, then overall there are <span class="math notranslate nohighlight">\(n_1n_2 \dots n_r\)</span> possibilities for the whole experiment.</p>
+<p>Sampling Table</p>
+<p>The sampling table gives the number of possible samples of size <span class="math notranslate nohighlight">\(k\)</span> out of a population of size <span class="math notranslate nohighlight">\(n\)</span>, under various assumptions about how the sample is collected.
+%\begin{table}[H]
+\begin{center}
+\setlength{\extrarowheight}{7pt}
+\begin{tabular}{r|cc}
+&amp; \textbf{Order Matters} &amp; \textbf{Not Matter} \ \hline
+\textbf{With Replacement} &amp; <span class="math notranslate nohighlight">\(\displaystyle n^k\)</span> &amp; <span class="math notranslate nohighlight">\(\displaystyle{n+k-1 \choose k}\)</span> \
+\textbf{Without Replacement} &amp; <span class="math notranslate nohighlight">\(\displaystyle\frac{n!}{(n - k)!}\)</span> &amp; <span class="math notranslate nohighlight">\(\displaystyle{n \choose k}\)</span>
+\end{tabular}
+\end{center}
+%\end{table}</p>
+<p>\subsection{Naive Definition of Probability}  {If all outcomes are equally likely}, the probability of an event <span class="math notranslate nohighlight">\(A\)</span> happening is:
+[P_{\textrm{naive}}(A) = \frac{\textnormal{number of outcomes favorable to <span class="math notranslate nohighlight">\(A\)</span>}}{\textnormal{number of outcomes}}]</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -414,7 +427,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/chapter_name"
+            path: "./content/discrete_math"
         },
         predefinedOutput: true
     }
@@ -428,17 +441,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../multivariable_calculus/6_double_integrals_in_polar.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../chapter_name/discrete_math.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Double Integrals in Polar Coordinates</p>
+            <p class="prev-next-title">Discrete Math</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../probability/04_random_variables.html" title="next page">
+    <a class='right-next' id="next-link" href="../chapter_name/multivariable_calculus.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Random Variables</p>
+        <p class="prev-next-title">Multivariable Calculus</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
