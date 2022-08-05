@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discrete Math &#8212; My Math Hub</title>
+    <title>Basic Definitions &#8212; My Math Hub</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -49,10 +49,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Counting" href="../discrete_math/01_counting.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../../intro.html" />
+    <link rel="next" title="Random Variables" href="04_random_variables.html" />
+    <link rel="prev" title="Probability 101" href="../chapter_name/intro_probability.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,12 +119,12 @@ const thebe_selector_output = ".output, .cell_output"
   Discrete Math
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter_name/discrete_math.html">
    Discrete Math
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -143,7 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="multivariable_calculus.html">
+  <a class="reference internal" href="../chapter_name/multivariable_calculus.html">
    Multivariable Calculus
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -195,24 +197,24 @@ const thebe_selector_output = ".output, .cell_output"
   Probability
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="intro_probability.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../chapter_name/intro_probability.html">
    Probability 101
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../probability/00_basic%20definition.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Basic Definitions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../probability/04_random_variables.html">
+    <a class="reference internal" href="04_random_variables.html">
      Random Variables
     </a>
    </li>
@@ -308,7 +310,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/chapter_name/discrete_math.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/probability/00_basic definition.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -336,7 +338,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/chapter_name/discrete_math.md"
+        <a href="../../_sources/content/probability/00_basic definition.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -347,7 +349,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -373,23 +375,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiments-outcomes">
+   Experiments/Outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-space">
+   Sample Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#event">
+   Event
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naive-definition-of-probability">
+   Naive Definition of Probability
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Discrete Math</h1>
+                <h1>Basic Definitions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiments-outcomes">
+   Experiments/Outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-space">
+   Sample Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#event">
+   Event
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naive-definition-of-probability">
+   Naive Definition of Probability
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -397,12 +466,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="discrete-math">
-<h1>Discrete Math<a class="headerlink" href="#discrete-math" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../discrete_math/01_counting.html">Counting</a></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-definitions">
+<h1>Basic Definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this headline">#</a></h1>
+<div class="section" id="experiments-outcomes">
+<h2>Experiments/Outcomes<a class="headerlink" href="#experiments-outcomes" title="Permalink to this headline">#</a></h2>
+<p>An experiment generates an outcome from a pre-determined list. For example, a dice roll generates outcomes in the set <span class="math notranslate nohighlight">\(\{1, 2, 3, 4, 5, 6\}\)</span></p>
+</div>
+<div class="section" id="sample-space">
+<h2>Sample Space<a class="headerlink" href="#sample-space" title="Permalink to this headline">#</a></h2>
+<p>The sample space, denoted <span class="math notranslate nohighlight">\(\Omega\)</span>, is the set of possible outcomes. Note that the probability of this event is 1, since something in the sample space will always occur.</p>
+</div>
+<div class="section" id="event">
+<h2>Event<a class="headerlink" href="#event" title="Permalink to this headline">#</a></h2>
+<p>An event is a subset of the sample space, or a collection of possible outcomes of an experiment. We say that the event has occurred if any of the outcomes in the event have happened.</p>
+</div>
+<div class="section" id="naive-definition-of-probability">
+<h2>Naive Definition of Probability<a class="headerlink" href="#naive-definition-of-probability" title="Permalink to this headline">#</a></h2>
+<p>If all outcomes are equally likely, the probability of an event <span class="math notranslate nohighlight">\(A\)</span> happening is:</p>
+<div class="math notranslate nohighlight">
+\[
+P_{\textrm{naive}}(A) = \frac{\textnormal{number of outcomes favorable to $A$}}{\textnormal{number of outcomes}}
+\]</div>
 </div>
 </div>
 
@@ -419,7 +503,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/chapter_name"
+            path: "./content/probability"
         },
         predefinedOutput: true
     }
@@ -433,17 +517,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../chapter_name/intro_probability.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Probability 101</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../discrete_math/01_counting.html" title="next page">
+    <a class='right-next' id="next-link" href="04_random_variables.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Counting</p>
+        <p class="prev-next-title">Random Variables</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
