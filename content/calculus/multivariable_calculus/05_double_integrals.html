@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Integrals &#8212; My Math Hub</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Double Integrals in Polar Coordinates" href="06_double_integrals_in_polar.html" />
+    <link rel="prev" title="Optimization" href="04_optimization.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My Math Hub</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Discrete Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../chapter_name/discrete_math_counting.html">
+   Counting
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../discrete_math/counting/01_counting.html">
+     Counting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Calculus
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../chapter_name/calculus_multivariable_calculus.html">
+   Multivariable Calculus
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="00_multivariable_functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_partial_derivatives.html">
+     Partial Derivatives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_second_derivatives.html">
+     Second-Order Partial Derivatives and Chain Rule
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_directional_derivatives_and_gradients.html">
+     Directional Derivatives and Gradient Vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_optimization.html">
+     Optimization
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Double Integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_double_integrals_in_polar.html">
+     Double Integrals in Polar Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_triple_integrals.html">
+     Triple Integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08_triple_integrals_in_cyl_and_sphe_coor.html">
+     Triple Integrals in Cylindrical &amp; Spherical Coordinates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09_parametric_curves_and_vector_functions.html">
+     Parametric Curves and Vector Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../chapter_name/probability_intro_probability.html">
+   Probability 101
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../probability/intro_probability/00_basic%20definition.html">
+     Basic Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../probability/intro_probability/04_random_variables.html">
+     Random Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../probability/intro_probability/99_table_of_distribution.html">
+     Table of Distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/panda1835/math-repo/master?urlpath=tree/content/calculus/multivariable_calculus/05_double_integrals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/panda1835/math-repo"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/calculus/multivariable_calculus/05_double_integrals.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/content/calculus/multivariable_calculus/05_double_integrals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#double-riemann-sum">
+   Double Riemann Sum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#double-integral">
+   Double Integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpretations">
+   Interpretations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-double-integrals">
+   Properties of Double Integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fubini-s-theorem">
+   Fubini’s Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separable-integrals">
+   Separable Integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#double-integrals-over-general-regions">
+   Double integrals over General Regions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note">
+     Note
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Double Integrals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#double-riemann-sum">
+   Double Riemann Sum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#double-integral">
+   Double Integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpretations">
+   Interpretations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#properties-of-double-integrals">
+   Properties of Double Integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fubini-s-theorem">
+   Fubini’s Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#separable-integrals">
+   Separable Integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#double-integrals-over-general-regions">
+   Double integrals over General Regions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note">
+     Note
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="double-integrals">
+<h1>Double Integrals<a class="headerlink" href="#double-integrals" title="Permalink to this headline">#</a></h1>
+<div class="section" id="double-riemann-sum">
+<h2>Double Riemann Sum<a class="headerlink" href="#double-riemann-sum" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a continuous function on a rectangle <span class="math notranslate nohighlight">\(R=\{(x, y)\)</span> : <span class="math notranslate nohighlight">\(a \leq x \leq b, c \leq y \leq d\}\)</span>. A double Riemann sum for <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(R\)</span> is created as follows.</p>
+<ul class="simple">
+<li><p>Partition the interval <span class="math notranslate nohighlight">\([a, b]\)</span> into <span class="math notranslate nohighlight">\(m\)</span> subintervals of equal length <span class="math notranslate nohighlight">\(\Delta x=\frac{b-a}{m}\)</span>. Let <span class="math notranslate nohighlight">\(x_{0}, x_{1}, \ldots, x_{m}\)</span> be the endpoints of these subintervals, where <span class="math notranslate nohighlight">\(a=x_{0}&lt;\)</span> <span class="math notranslate nohighlight">\(x_{1}&lt;x_{2}&lt;\cdots&lt;x_{m}=b\)</span>.</p></li>
+<li><p>Partition the interval <span class="math notranslate nohighlight">\([c, d]\)</span> into <span class="math notranslate nohighlight">\(n\)</span> subintervals of equal length <span class="math notranslate nohighlight">\(\Delta y=\frac{d-c}{n}\)</span>. Let <span class="math notranslate nohighlight">\(y_{0}, y_{1}, \ldots, y_{n}\)</span> be the endpoints of these subintervals, where <span class="math notranslate nohighlight">\(c=y_{0}&lt;\)</span> <span class="math notranslate nohighlight">\(y_{1}&lt;y_{2}&lt;\cdots&lt;y_{n}=d\)</span>.</p></li>
+<li><p>These two partitions create a partition of the rectangle <span class="math notranslate nohighlight">\(R\)</span> into <span class="math notranslate nohighlight">\(m n\)</span> subrectangles <span class="math notranslate nohighlight">\(R_{i j}\)</span> with opposite vertices <span class="math notranslate nohighlight">\(\left(x_{i-1}, y_{j-1}\right)\)</span> and <span class="math notranslate nohighlight">\(\left(x_{i}, y_{j}\right)\)</span> for <span class="math notranslate nohighlight">\(i\)</span> between 1 and <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(j\)</span> between 1 and <span class="math notranslate nohighlight">\(n\)</span>. These rectangles all have equal area <span class="math notranslate nohighlight">\(\Delta A=\Delta x \cdot \Delta y\)</span>.</p></li>
+<li><p>Choose a point <span class="math notranslate nohighlight">\(\left(x_{i j}^{*}, y_{i j}^{*}\right)\)</span> in each rectangle <span class="math notranslate nohighlight">\(R_{i j}\)</span>. Then, a double Riemann sum for <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(R\)</span> is given by</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\sum_{j=1}^{n} \sum_{i=1}^{m} f\left(x_{i j}^{*}, y_{i j}^{*}\right) \cdot \Delta A .
+\]</div>
+</div>
+<div class="section" id="double-integral">
+<h2>Double Integral<a class="headerlink" href="#double-integral" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(R\)</span> be a rectangular region in the <span class="math notranslate nohighlight">\(x y\)</span>-plane and <span class="math notranslate nohighlight">\(f\)</span> a continuous function over <span class="math notranslate nohighlight">\(R\)</span>. With terms defined as in a double Riemann sum, the double integral of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(R\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{R} f(x, y) d A=\lim _{m, n \rightarrow \infty} \sum_{j=1}^{n} \sum_{i=1}^{m} f\left(x_{i j}^{*}, y_{i j}^{*}\right) \cdot \Delta A .
+\]</div>
+</div>
+<div class="section" id="interpretations">
+<h2>Interpretations<a class="headerlink" href="#interpretations" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\iint_{R} f(x, y) d A\)</span> represents the ‘signed’ volume of the solid that lies under the surface <span class="math notranslate nohighlight">\(f(x, y)\)</span> above the region <span class="math notranslate nohighlight">\(R\)</span> in the <span class="math notranslate nohighlight">\(x y\)</span>-plane. (That is, the volume of the solid(s) the surface <span class="math notranslate nohighlight">\(f\)</span> bounds above the <span class="math notranslate nohighlight">\(x y\)</span>-plane minus the volume it bounds below the <span class="math notranslate nohighlight">\(x y\)</span>-plane on <span class="math notranslate nohighlight">\(R\)</span>.)</p></li>
+<li><p><span class="math notranslate nohighlight">\(A=\iint_{R} d A\)</span> represents the area of the region <span class="math notranslate nohighlight">\(R\)</span> in the <span class="math notranslate nohighlight">\(x y\)</span>-plane.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_{a v}=\frac{1}{A} \iint_{R} f(x, y) d A\)</span> represents the average value of the function <span class="math notranslate nohighlight">\(f(x, y)\)</span> on the region <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="properties-of-double-integrals">
+<h2>Properties of Double Integrals<a class="headerlink" href="#properties-of-double-integrals" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> be continuous functions on a rectangle <span class="math notranslate nohighlight">\(R=\{(x, y): a \leq x \leq b, c \leq y \leq d\}\)</span>, and let <span class="math notranslate nohighlight">\(k\)</span> be a constant. Then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\iint_{R}(f(x, y)+g(x, y)) d A=\iint_{R} f(x, y) d A+\iint_{R} g(x, y) d A\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\iint_{R} k f(x, y) d A=k \iint_{R} f(x, y) d A\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(x, y) \geq g(x, y)\)</span> on <span class="math notranslate nohighlight">\(R\)</span>, then <span class="math notranslate nohighlight">\(\iint_{R} f(x, y) d A \geq \iint_{R} g(x, y) d A\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="fubini-s-theorem">
+<h2>Fubini’s Theorem<a class="headerlink" href="#fubini-s-theorem" title="Permalink to this headline">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(z=f(x, y)\)</span> is continuous on <span class="math notranslate nohighlight">\(R=[a, b] \times[c, d]\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{R} f(x, y) d A=\int_{a}^{b}\left(\int_{c}^{d} f(x, y) d y\right) d x=\int_{c}^{d}\left(\int_{a}^{b} f(x, y) d x\right) d y .
+\]</div>
+<ul class="simple">
+<li><p>These are called iterated integrals. They can be found by evaluating two single integrals.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{c}^{d} f(x, y) d y\)</span> means <span class="math notranslate nohighlight">\(x\)</span> is held fixed (treated as a constant) and <span class="math notranslate nohighlight">\(f\)</span> is integrated with respect to <span class="math notranslate nohighlight">\(y\)</span> from <span class="math notranslate nohighlight">\(y=c\)</span> to <span class="math notranslate nohighlight">\(y=d\)</span>. This procedure is called partial integration. The result is a function of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>The second step is to integrate that function of <span class="math notranslate nohighlight">\(x\)</span> with respect <span class="math notranslate nohighlight">\(x\)</span> from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+<li><p>Similarly, <span class="math notranslate nohighlight">\(\int_{c}^{d}\left(\int_{a}^{b} f(x, y) d x\right) d y\)</span> means integrate <span class="math notranslate nohighlight">\(f\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(y\)</span> held fixed. This gives a function of <span class="math notranslate nohighlight">\(y\)</span> which is then integrated with respect to <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Iterated integrals are usual written without the brackets. (You should understand the <span class="math notranslate nohighlight">\(\int \ldots d x\)</span> or <span class="math notranslate nohighlight">\(\int \ldots d y\)</span> to act like a pair of brackets.)</p></li>
+</ul>
+</div>
+<div class="section" id="separable-integrals">
+<h2>Separable Integrals<a class="headerlink" href="#separable-integrals" title="Permalink to this headline">#</a></h2>
+<p>Consider the special case <span class="math notranslate nohighlight">\(f(x, y)=g(x) h(y)\)</span> on a rectangular region <span class="math notranslate nohighlight">\(R=[a, b] \times[c, d]\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{R} f(x, y) d A=\int_{a}^{b}\left(\int_{c}^{d} g(x) h(y) d y\right) d x .
+\]</div>
+<p>In finding the inner integral, <span class="math notranslate nohighlight">\(g(x)\)</span> is treated as a constant so we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{R} f(x, y) d A=\int_{a}^{b} g(x)\left(\int_{c}^{d} h(y) d y\right) d x .
+\]</div>
+<p>The inner integral also yields a constant so we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{R} f(x, y) d A=\left(\int_{a}^{b} g(x) d x\right) \cdot\left(\int_{c}^{d} h(y) d y\right) .
+\]</div>
+<p>I.e. in this special case, the double integral can be written as the product of two single integrals.</p>
+</div>
+<div class="section" id="double-integrals-over-general-regions">
+<h2>Double integrals over General Regions<a class="headerlink" href="#double-integrals-over-general-regions" title="Permalink to this headline">#</a></h2>
+<p>For a type I region</p>
+<div class="math notranslate nohighlight">
+\[
+D=\left\{(x, y): a \leq x \leq b, g_{1}(x) \leq y \leq g_{2}(x)\right\}
+\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{D} f(x, y) d A=\int_{a}^{b}\left(\int_{g_{1}(x)}^{g_{2}(x)} f(x, y) d y\right) d x
+\]</div>
+<p><img alt="image" src="../../../_images/img12.jpg" /></p>
+<p>For a type II region</p>
+<div class="math notranslate nohighlight">
+\[
+D=\left\{(x, y): h_{1}(y) \leq x \leq h_{2}(y), c \leq y \leq d\right\}
+\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{D} f(x, y) d A=\int_{c}^{d}\left(\int_{h_{1}(y)}^{h_{2}(y)} f(x, y) d x\right) d y
+\]</div>
+<p><img alt="image" src="../../../_images/img22.jpg" /></p>
+<div class="section" id="note">
+<h3>Note<a class="headerlink" href="#note" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Now we cannot easily reverse the order of integration.</p></li>
+<li><p>The limits of the outer integral must always be constants. The limits of the inner integral may be functions of the outer variable.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/calculus/multivariable_calculus"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04_optimization.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Optimization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="06_double_integrals_in_polar.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Double Integrals in Polar Coordinates</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Le Hoang Phuc<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
