@@ -49,6 +49,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Probability 101" href="../../chapter_name/probability_intro_probability.html" />
@@ -309,6 +311,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/panda1835/math-repo/master?urlpath=tree/content/calculus/multivariable_calculus/13_conservative_fields.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -413,12 +444,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conservative-fields-and-potentials">
+   Conservative Fields and Potentials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fundamental-theorem-for-line-integrals">
+   The Fundamental Theorem for Line Integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-test-theorem">
+   (Component Test) Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-test-for-conservative-fields">
+   Component Test for Conservative Fields
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -430,6 +500,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conservative-fields-and-potentials">
+   Conservative Fields and Potentials
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fundamental-theorem-for-line-integrals">
+   The Fundamental Theorem for Line Integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-test-theorem">
+   (Component Test) Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#component-test-for-conservative-fields">
+   Component Test for Conservative Fields
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -439,6 +537,60 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="conservative-fields">
 <h1>Conservative Fields<a class="headerlink" href="#conservative-fields" title="Permalink to this headline">#</a></h1>
+<div class="section" id="conservative-fields-and-potentials">
+<h2>Conservative Fields and Potentials<a class="headerlink" href="#conservative-fields-and-potentials" title="Permalink to this headline">#</a></h2>
+<p>If for a vector field <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y, z)\)</span> there exists a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> satisfying <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}=\overrightarrow{\boldsymbol{\nabla}} f\)</span> then <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is called a conservative vector field, and <span class="math notranslate nohighlight">\(f\)</span> is called a potential function for vector field <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span>.</p>
+<ul class="simple">
+<li><p>Not all vector fields are conservative, but many important fields in physics are conservative.</p></li>
+<li><p>For a conservative field, field lines are orthogonal to equipotential surfaces.</p></li>
+</ul>
+</div>
+<div class="section" id="the-fundamental-theorem-for-line-integrals">
+<h2>The Fundamental Theorem for Line Integrals<a class="headerlink" href="#the-fundamental-theorem-for-line-integrals" title="Permalink to this headline">#</a></h2>
+<p>For a smooth curve <span class="math notranslate nohighlight">\(C\)</span> given by <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}(t), a \leq t \leq b\)</span>, and a scalar field <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> such that <span class="math notranslate nohighlight">\(\vec{\nabla} f\)</span> exists</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{C} \vec{\nabla} f \cdot d \overrightarrow{\boldsymbol{r}}=f(\mathbf{r}(b))-f(\mathbf{r}(a)) .
+\]</div>
+<p>and is continuous on <span class="math notranslate nohighlight">\(C\)</span>,</p>
+<p>Hence for a conservative field <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}=\overrightarrow{\boldsymbol{\nabla}} f\)</span></p>
+<ul class="simple">
+<li><p>the line integral of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is equal to the net change in the potential function, <span class="math notranslate nohighlight">\(\Delta f\)</span></p></li>
+<li><p>the line integral of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is independent of path</p></li>
+<li><p>around any closed path, <span class="math notranslate nohighlight">\(\oint_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=0\)</span>.</p></li>
+</ul>
+<p>The following converse statements can also be proved to be true (see textbooks):</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span> is independent of path if and only if <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is a conservative vector field (that is, if and only if there exists a scalar function <span class="math notranslate nohighlight">\(f\)</span> such that <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}=\overrightarrow{\boldsymbol{\nabla}} f\)</span>.)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span> is independent of path in a region <span class="math notranslate nohighlight">\(D\)</span> if and only if <span class="math notranslate nohighlight">\(\oint_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=0\)</span> for every closed path <span class="math notranslate nohighlight">\(C\)</span> in <span class="math notranslate nohighlight">\(D\)</span>.</p></li>
+</ul>
+<p><strong>Application</strong></p>
+<p>This theorem is the mathematical basis of the principle of conservation of energy. For a conservative force field <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span>, the potential energy, <span class="math notranslate nohighlight">\(E_{p}\)</span>, of a body due to the field is defined to be minus the associated potential, <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}=-\overrightarrow{\boldsymbol{\nabla}} E_{p}\)</span>. So if we move a body along a path <span class="math notranslate nohighlight">\(C\)</span> from point <span class="math notranslate nohighlight">\(A\)</span> to point <span class="math notranslate nohighlight">\(B\)</span> against the field, the increase in potential energy is equal to the work done against the field and is independent of path: <span class="math notranslate nohighlight">\(\quad-\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=\int_{A}^{B} \overrightarrow{\boldsymbol{\nabla}} E_{p} \cdot d \overrightarrow{\boldsymbol{r}}=E_{p}(B)-E_{p}(A)\)</span>.</p>
+</div>
+<div class="section" id="component-test-theorem">
+<h2>(Component Test) Theorem<a class="headerlink" href="#component-test-theorem" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{F}=M(x, y) \mathbf{i}+N(x, y) \mathbf{j}\)</span> is a conservative vector field on an open, simply connected” region <span class="math notranslate nohighlight">\(D\)</span>, and <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(N\)</span> have continuous first order partial derivatives in <span class="math notranslate nohighlight">\(D\)</span>, then <span class="math notranslate nohighlight">\(\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\)</span> throughout <span class="math notranslate nohighlight">\(D\)</span>.</p></li>
+<li><p>Conversely, if <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> have continuous first order partial derivatives in <span class="math notranslate nohighlight">\(D\)</span> and satisfy <span class="math notranslate nohighlight">\(\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\)</span> then <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is conservative.</p></li>
+</ol>
+<ul class="simple">
+<li><p>open means it does not contain any boundary points</p></li>
+<li><p>simply connected means it consists of just one piece, without any holes</p></li>
+</ul>
+<p><img alt="img" src="../../../_images/img14.png" /></p>
+<p>Note:</p>
+<ul class="simple">
+<li><p>Part ii) is what we use to determine whether or not a given vector field is conservative, and is sometimes known as the component test. The equivalent result in <span class="math notranslate nohighlight">\(\boldsymbol{R}^{3}\)</span> is (from Thomas p.994):</p></li>
+</ul>
+</div>
+<div class="section" id="component-test-for-conservative-fields">
+<h2>Component Test for Conservative Fields<a class="headerlink" href="#component-test-for-conservative-fields" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{F}=M(x, y, z) \mathbf{i}+N(x, y, z) \mathbf{j}+P(x, y, z) \mathbf{k}\)</span> be a field on an open simply connected domain whose component functions have continuous first partial derivatives. Then, <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is conservative if and only if</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial P}{\partial y}=\frac{\partial N}{\partial z}, \quad \frac{\partial M}{\partial z}=\frac{\partial P}{\partial x}, \quad \text { and } \quad \frac{\partial N}{\partial x}=\frac{\partial M}{\partial y} .
+\]</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
