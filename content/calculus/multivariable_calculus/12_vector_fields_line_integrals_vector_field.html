@@ -49,6 +49,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Conservative Fields" href="13_conservative_fields.html" />
@@ -442,12 +444,66 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-and-vector-fields-definitions">
+   Scalar and Vector Fields: Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-fields">
+   Gradient Fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#work-done">
+   Work Done
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-evaluate-the-integral">
+   To evaluate the integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-notation">
+   Alternative Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-definitions">
+   Further Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#circulation">
+   Circulation
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -459,6 +515,49 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-and-vector-fields-definitions">
+   Scalar and Vector Fields: Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-fields">
+   Gradient Fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#work-done">
+   Work Done
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-evaluate-the-integral">
+   To evaluate the integral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-notation">
+   Alternative Notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-definitions">
+   Further Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#circulation">
+   Circulation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -468,6 +567,73 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="vector-fields-line-integrals-of-vector-fields">
 <h1>Vector Fields &amp; Line Integrals of Vector Fields<a class="headerlink" href="#vector-fields-line-integrals-of-vector-fields" title="Permalink to this headline">#</a></h1>
+<div class="section" id="scalar-and-vector-fields-definitions">
+<h2>Scalar and Vector Fields: Definitions<a class="headerlink" href="#scalar-and-vector-fields-definitions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Consider a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> where <span class="math notranslate nohighlight">\(x, y, z\)</span> are coordinates in space. The function assigns a value of <span class="math notranslate nohighlight">\(f\)</span> to every point in a 3D region; <span class="math notranslate nohighlight">\(f\)</span> can be called a scalar field.</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(2 \mathrm{D}\)</span> vector field is a vector function <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> that assigns to each point <span class="math notranslate nohighlight">\((x, y)\)</span> a <span class="math notranslate nohighlight">\(2 \mathrm{D}\)</span> region a <span class="math notranslate nohighlight">\(2 \mathrm{D}\)</span> vector <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y)=M(x, y) \mathbf{i}+N(x, y) \mathbf{j}\)</span>.</p></li>
+<li><p>A 3D vector field is a vector function <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> that assigns to each point <span class="math notranslate nohighlight">\((x, y, z)\)</span> a 3D region <span class="math notranslate nohighlight">\(E\)</span> a 3D vector <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y, z)=M(x, y, z) \mathbf{i}+N(x, y, z) \mathbf{j}+P(x, y, z) \mathbf{k}\)</span>.</p></li>
+<li><p>The component functions <span class="math notranslate nohighlight">\(M, N, P\)</span> are scalar fields.</p></li>
+<li><p>A vector field may also be denoted <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(\overrightarrow{\boldsymbol{r}})\)</span> where <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}=\langle x, y\rangle\left(\right.\)</span> in <span class="math notranslate nohighlight">\(\left.\boldsymbol{R}^{2}\right)\)</span> or <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}=\langle x, y, z\rangle\)</span> (in <span class="math notranslate nohighlight">\(\boldsymbol{R}^{3}\)</span> ) is the position vector of point <span class="math notranslate nohighlight">\((x, y)\)</span> or <span class="math notranslate nohighlight">\((x, y, z)\)</span> respectively.</p></li>
+<li><p>Vector fields may be represented graphically by sketching some of these vectors. (Sometimes the lengths of the vectors are scaled.)</p></li>
+</ul>
+</div>
+<div class="section" id="gradient-fields">
+<h2>Gradient Fields<a class="headerlink" href="#gradient-fields" title="Permalink to this headline">#</a></h2>
+<p>Recall from PD3 that for a (scalar) function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}, f_{z}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}+\frac{\partial f}{\partial z} \mathbf{k}
+\]</div>
+<p>and is orthogonal to the level surfaces <span class="math notranslate nohighlight">\(f(x, y, z)=k\)</span>. <span class="math notranslate nohighlight">\(\vec{\nabla} f\)</span> is the gradient field of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+<div class="section" id="work-done">
+<h2>Work Done<a class="headerlink" href="#work-done" title="Permalink to this headline">#</a></h2>
+<p>Suppose a force field <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(\overrightarrow{\boldsymbol{r}})=\langle M(x, y, z), N(x, y, z), P(x, y, z)\rangle\)</span> moves a particle along a smooth curve <span class="math notranslate nohighlight">\(C\)</span> defined by <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}=\langle x(t), y(t), z(t)\rangle\)</span>.</p>
+<p>Consider a short element of <span class="math notranslate nohighlight">\(C\)</span> at position <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}\)</span>. The vector along this element is <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{r}}\)</span>. The work done in moving the particle along this element is <span class="math notranslate nohighlight">\(d W=\overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span>.</p>
+<p>So the total work done by <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> in moving the particle along <span class="math notranslate nohighlight">\(C\)</span> is <span class="math notranslate nohighlight">\(W=\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span>.</p>
+<p>This is an example of a line integral of a vector field.</p>
+<p>Notes:</p>
+<ol class="simple">
+<li><p>Strictly speaking the vector line integral is the integral of the scalar tangential component of the vector field along the curve (see textbooks).</p></li>
+<li><p>The value depends on the orientation of the curve: If <span class="math notranslate nohighlight">\(C\)</span> is the curve from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(B\)</span> and we notate as <span class="math notranslate nohighlight">\(-C\)</span> the curve from <span class="math notranslate nohighlight">\(B\)</span> to <span class="math notranslate nohighlight">\(A\)</span> then <span class="math notranslate nohighlight">\(\int_{-C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=-\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span></p></li>
+<li><p>A path can be divided into pieces: <span class="math notranslate nohighlight">\(\quad \int_{C_{1}+C_{2}} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=\int_{C_{1}} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}+\int_{C_{2}} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span></p></li>
+</ol>
+</div>
+<div class="section" id="to-evaluate-the-integral">
+<h2>To evaluate the integral<a class="headerlink" href="#to-evaluate-the-integral" title="Permalink to this headline">#</a></h2>
+<p>a) Find a parameterization <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}(t)\)</span> for the curve (if not given)</p>
+<p>b) Calculate <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}, \frac{d \vec{r}}{d t}\)</span> and <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}} \cdot \frac{d \vec{r}}{d t}\)</span> in terms of the parameter <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>c) Evaluate the line integral in terms of the parameter <span class="math notranslate nohighlight">\(t: \quad \int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=\int_{C}\left(\overrightarrow{\boldsymbol{F}} \cdot \frac{d \overrightarrow{\boldsymbol{r}}}{d t}\right) d t\)</span>.</p>
+</div>
+<div class="section" id="alternative-notation">
+<h2>Alternative Notation<a class="headerlink" href="#alternative-notation" title="Permalink to this headline">#</a></h2>
+<p>For <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}=\langle x(t), y(t), z(t)\rangle\)</span>, we have <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{r}}=\langle d x, d y, d z\rangle=\left\langle\frac{d x}{d t}, \frac{d y}{d t}, \frac{d z}{d t}\right\rangle d t\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[
+W=\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=\int_{C}\left(M \frac{d x}{d t}+N \frac{d y}{d t}+P \frac{d z}{d t}\right) d t=\int_{C} M d x+N d y+P d z
+\]</div>
+<p>where the last step is a shorthand notation, and is known as the differential form of a line integral.</p>
+</div>
+<div class="section" id="further-definitions">
+<h2>Further Definitions<a class="headerlink" href="#further-definitions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>A curve is oriented if we have chosen a direction of travel on it. When a curve is given parametrically (including as a vector-valued function), we assume we travel from the smallest to the largest allowed value of the parameter.</p></li>
+<li><p>A closed curve (or loop) is an oriented curve that ends at the same point where it started.</p></li>
+<li><p>The positive orientation of a closed curve <span class="math notranslate nohighlight">\(C\)</span> is such that when we move along <span class="math notranslate nohighlight">\(C\)</span>, the region inside <span class="math notranslate nohighlight">\(C\)</span> is on the left - see figure below.</p></li>
+<li><p>A curve in <span class="math notranslate nohighlight">\(\boldsymbol{R}^{2}\)</span> is simple if it does not cross itself. (See figure below - from Thomas Fig. 16.23.)</p></li>
+</ul>
+<p><img alt="img" src="../../../_images/img13.png" /></p>
+</div>
+<div class="section" id="circulation">
+<h2>Circulation<a class="headerlink" href="#circulation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> represents the velocity field of a fluid flowing through a region in space then <span class="math notranslate nohighlight">\(\int_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span> gives the flow of the fluid along path <span class="math notranslate nohighlight">\(C\)</span>.</p></li>
+<li><p>A line integral around a closed curve is often notated <span class="math notranslate nohighlight">\(\oint\)</span>.</p></li>
+<li><p>On a closed path, <span class="math notranslate nohighlight">\(\oint_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\)</span> is called the circulation.</p></li>
+</ul>
+<p>Circulation serves as a measure of a vector field’s tendency to rotate in a manner consistent with the orientation of the curve.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
