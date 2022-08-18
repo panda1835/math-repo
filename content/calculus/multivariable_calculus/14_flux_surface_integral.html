@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directional Derivatives and Gradient Vector &#8212; My Math Hub</title>
+    <title>Flux &amp; Surface Integrals &#8212; My Math Hub</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Optimization" href="04_optimization.html" />
-    <link rel="prev" title="Second-Order Partial Derivatives and Chain Rule" href="02_second_derivatives.html" />
+    <link rel="next" title="Divergence, Curl and more Theorems" href="15_divergence_curl.html" />
+    <link rel="prev" title="Conservative Fields" href="13_conservative_fields.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -169,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
      Second-Order Partial Derivatives and Chain Rule
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_directional_derivatives_and_gradients.html">
      Directional Derivatives and Gradient Vector
     </a>
    </li>
@@ -224,8 +224,8 @@ const thebe_selector_output = ".output, .cell_output"
      Conservative Fields
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14_flux_surface_integral.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Flux &amp; Surface Integrals
     </a>
    </li>
@@ -339,7 +339,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/panda1835/math-repo/master?urlpath=tree/content/calculus/multivariable_calculus/03_directional_derivatives_and_gradients.ipynb"
+        <a href="https://mybinder.org/v2/gh/panda1835/math-repo/master?urlpath=tree/content/calculus/multivariable_calculus/14_flux_surface_integral.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -399,7 +399,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/calculus/multivariable_calculus/03_directional_derivatives_and_gradients.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/calculus/multivariable_calculus/14_flux_surface_integral.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -427,7 +427,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/content/calculus/multivariable_calculus/03_directional_derivatives_and_gradients.ipynb"
+        <a href="../../../_sources/content/calculus/multivariable_calculus/14_flux_surface_integral.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -487,38 +487,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradient-vector">
-   Gradient Vector
+  <a class="reference internal nav-link" href="#oriented-surfaces">
+   Oriented Surfaces
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#directional-derivative">
-   Directional Derivative
+  <a class="reference internal nav-link" href="#flux">
+   Flux
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometrical-properties">
-   Geometrical properties
+  <a class="reference internal nav-link" href="#surface-integrals-of-vector-fields-flux-integrals">
+   Surface integrals of vector fields (flux integrals)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-of-3-variables">
-   Functions of 3 Variables
+  <a class="reference internal nav-link" href="#evaluating-flux-integrals">
+   Evaluating flux integrals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-line-to-a-level-curve">
-   Tangent Line to a Level Curve
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algebraic-rules-of-gradient">
-   Algebraic Rules of Gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-planes-and-normal-lines">
-   Tangent Planes and Normal Lines
+  <a class="reference internal nav-link" href="#an-application">
+   An application
   </a>
  </li>
 </ul>
@@ -530,7 +520,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Directional Derivatives and Gradient Vector</h1>
+                <h1>Flux & Surface Integrals</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -541,38 +531,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradient-vector">
-   Gradient Vector
+  <a class="reference internal nav-link" href="#oriented-surfaces">
+   Oriented Surfaces
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#directional-derivative">
-   Directional Derivative
+  <a class="reference internal nav-link" href="#flux">
+   Flux
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometrical-properties">
-   Geometrical properties
+  <a class="reference internal nav-link" href="#surface-integrals-of-vector-fields-flux-integrals">
+   Surface integrals of vector fields (flux integrals)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-of-3-variables">
-   Functions of 3 Variables
+  <a class="reference internal nav-link" href="#evaluating-flux-integrals">
+   Evaluating flux integrals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-line-to-a-level-curve">
-   Tangent Line to a Level Curve
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algebraic-rules-of-gradient">
-   Algebraic Rules of Gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-planes-and-normal-lines">
-   Tangent Planes and Normal Lines
+  <a class="reference internal nav-link" href="#an-application">
+   An application
   </a>
  </li>
 </ul>
@@ -585,89 +565,57 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="directional-derivatives-and-gradient-vector">
-<h1>Directional Derivatives and Gradient Vector<a class="headerlink" href="#directional-derivatives-and-gradient-vector" title="Permalink to this headline">#</a></h1>
-<div class="section" id="gradient-vector">
-<h2>Gradient Vector<a class="headerlink" href="#gradient-vector" title="Permalink to this headline">#</a></h2>
-<p>For a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span>, the gradient vector is defined by</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}
-\]</div>
-</div>
-<div class="section" id="directional-derivative">
-<h2>Directional Derivative<a class="headerlink" href="#directional-derivative" title="Permalink to this headline">#</a></h2>
-<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is, provided the limit exists,</p>
-<div class="math notranslate nohighlight">
-\[
-D_{\vec{u}} f(a, b)=\lim _{h \rightarrow 0} \frac{f\left(a+h u_{1}, b+h u_{2}\right)-f(a, b)}{h} .
-\]</div>
-<img src="../../../media/mvc/grad/img1.png" style="width:400px;"/><p>Hence the directional derivative of a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-D_{\vec{u}} f(a, b)=\overrightarrow{\boldsymbol{\nabla}} f(a, b) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b) u_{1}+f_{y}(a, b) u_{2} .
-\]</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="flux-surface-integrals">
+<h1>Flux &amp; Surface Integrals<a class="headerlink" href="#flux-surface-integrals" title="Permalink to this headline">#</a></h1>
+<div class="section" id="oriented-surfaces">
+<h2>Oriented Surfaces<a class="headerlink" href="#oriented-surfaces" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>It is the rate of change of <span class="math notranslate nohighlight">\(z\)</span> in the direction of <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}\)</span> (and is a scalar)</p></li>
-<li><p>Alternative notations: <span class="math notranslate nohighlight">\(\left.D_{\vec{u}} f\right|_{(a, b)}, \quad f_{\vec{u}}(a, b)\)</span></p></li>
+<li><p>If at every point on a surface <span class="math notranslate nohighlight">\(S\)</span> there exist two unique unit normal vectors, <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> and <span class="math notranslate nohighlight">\(-\hat{\boldsymbol{n}}\)</span>, with <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> varying continuously over <span class="math notranslate nohighlight">\(S\)</span>, then <span class="math notranslate nohighlight">\(S\)</span> is called an oriented (or orientable or two-sided) surface.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(S\)</span> is defined by <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}(u, v)\)</span>, the positive normal vector is in the direction of <span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial u} \times \frac{\partial \vec{r}}{\partial v}\)</span>.</p></li>
+<li><p>For a closed surface bounding a solid region <span class="math notranslate nohighlight">\(E\)</span>, the positive orientation is that for which normal vectors point outward from <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
 </ul>
 </div>
-<div class="section" id="geometrical-properties">
-<h2>Geometrical properties<a class="headerlink" href="#geometrical-properties" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(f\)</span> is a differentiable function at the point <span class="math notranslate nohighlight">\((a, b)\)</span> and <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span> is perpendicular to the level curve (contour) of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
-<li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span>.</p></li>
-</ul>
-<div class="figure align-default">
-<img alt="../../../_images/img21.png" src="../../../_images/img21.png" />
+<div class="section" id="flux">
+<h2>Flux<a class="headerlink" href="#flux" title="Permalink to this headline">#</a></h2>
+<p>The flux of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y, z)\)</span> across a surface <span class="math notranslate nohighlight">\(S\)</span> is given by <span class="math notranslate nohighlight">\(\iint_{S} \overrightarrow{\boldsymbol{F}} \cdot \hat{\mathbf{n}} d S\)</span> where <span class="math notranslate nohighlight">\(\hat{\mathbf{n}}\)</span> is a field of unit vectors perpendicular (‘normal’) to the surface.</p>
 </div>
-</div>
-<div class="section" id="functions-of-3-variables">
-<h2>Functions of 3 Variables<a class="headerlink" href="#functions-of-3-variables" title="Permalink to this headline">#</a></h2>
-<p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is defined by</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}, f_{z}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}+\frac{\partial f}{\partial z} \mathbf{k}
-\]</div>
-<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\)</span> <span class="math notranslate nohighlight">\(\left\langle u_{1}, u_{2}, u_{3}\right\rangle\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-D_{\vec{u}} f(a, b, c)=\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b, c) u_{1}+f_{y}(a, b, c) u_{2}+f_{z}(a, b, c) u_{3} .
-\]</div>
-<p>If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
+<div class="section" id="surface-integrals-of-vector-fields-flux-integrals">
+<h2>Surface integrals of vector fields (flux integrals)<a class="headerlink" href="#surface-integrals-of-vector-fields-flux-integrals" title="Permalink to this headline">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is a continuous vector field defined on an oriented surface <span class="math notranslate nohighlight">\(S\)</span> with unit normal vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> then the surface integral of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> over <span class="math notranslate nohighlight">\(S\)</span> is <span class="math notranslate nohighlight">\(\iint_{S} \overrightarrow{\boldsymbol{F}} \cdot \hat{\boldsymbol{n}} d S=\iint_{S} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{S}} \quad\)</span> where <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}\)</span> is a vector surface area element, <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}=\hat{\boldsymbol{n}} d S\)</span>.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span> is perpendicular to the level surface of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span></p></li>
-<li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span>.</p></li>
+<li><p>This integral is also called the flux of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> over <span class="math notranslate nohighlight">\(S\)</span></p></li>
+<li><p>It is the integral of the normal component of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> over <span class="math notranslate nohighlight">\(S\)</span></p></li>
+<li><p>For a closed surface, it is the flux of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> out of <span class="math notranslate nohighlight">\(S\)</span> if <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> points outwards, or the flux into <span class="math notranslate nohighlight">\(S\)</span> if <span class="math notranslate nohighlight">\(\hat{\boldsymbol{n}}\)</span> points inwards</p></li>
 </ul>
 </div>
-<div class="section" id="tangent-line-to-a-level-curve">
-<h2>Tangent Line to a Level Curve<a class="headerlink" href="#tangent-line-to-a-level-curve" title="Permalink to this headline">#</a></h2>
+<div class="section" id="evaluating-flux-integrals">
+<h2>Evaluating flux integrals<a class="headerlink" href="#evaluating-flux-integrals" title="Permalink to this headline">#</a></h2>
+<p>As for surface integrals of scalar fields, the method of finding <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}\)</span> and evaluating the integral depends on the surface given.</p>
+<ul class="simple">
+<li><p>For a parametric surface <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{r}}(u, v)\)</span>, we have <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}=\hat{\boldsymbol{n}} d S=\overrightarrow{\boldsymbol{n}} d u d v=\frac{\partial \overrightarrow{\boldsymbol{r}}}{\partial u} \times \frac{\partial \overrightarrow{\boldsymbol{r}}}{\partial v} d u d v\)</span></p></li>
+<li><p>For a surface <span class="math notranslate nohighlight">\(z=g(x, y)\)</span>, using <span class="math notranslate nohighlight">\(x, y\)</span> as parameters, <span class="math notranslate nohighlight">\(\frac{\partial \vec{r}}{\partial x} \times \frac{\partial \vec{r}}{\partial y}=\left\langle-\frac{\partial g}{\partial x},-\frac{\partial g}{\partial y}, 1\right\rangle\)</span>.</p></li>
+</ul>
+<p>So <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}=\left\langle-\frac{\partial g}{\partial x},-\frac{\partial g}{\partial y}, 1\right\rangle d x d y\)</span>.</p>
+<ul class="simple">
+<li><p>Sometimes <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}\)</span> can be deduced simply by geometry (e.g. on the faces of a rectangular box).</p></li>
+<li><p>On the curved surface of a cylinder of radius <span class="math notranslate nohighlight">\(a\)</span>, the direction of <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}\)</span> is radially outwards and the magnitude is <span class="math notranslate nohighlight">\(d S=a d \theta d \phi\)</span>. On the curved surface of a sphere of radius <span class="math notranslate nohighlight">\(a\)</span>, the direction of <span class="math notranslate nohighlight">\(d \overrightarrow{\boldsymbol{S}}\)</span> is radially outwards and the magnitude is <span class="math notranslate nohighlight">\(d S=a^{2} \sin \phi d \theta d \phi\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="an-application">
+<h2>An application<a class="headerlink" href="#an-application" title="Permalink to this headline">#</a></h2>
+<p><strong>Gauss’s Law</strong> of electrostatics states that for a closed surface <span class="math notranslate nohighlight">\(S\)</span>, the flux of the electric field <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> through the surface is related to the charge <span class="math notranslate nohighlight">\(Q\)</span> enclosed:</p>
 <div class="math notranslate nohighlight">
 \[
-f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) = 0
+\iint_{S} \mathbf{E} \cdot d \mathbf{S}=\frac{Q}{\epsilon_{0}} \quad \text { where } \varepsilon_{0} \text { is a constant. }
 \]</div>
-<div class="highlight-{figure}../../../media/mvc/grad/img3.png notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="algebraic-rules-of-gradient">
-<h2>Algebraic Rules of Gradient<a class="headerlink" href="#algebraic-rules-of-gradient" title="Permalink to this headline">#</a></h2>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img4.png" src="../media/mvc/grad/img4.png" />
-</div>
-</div>
-<div class="section" id="tangent-planes-and-normal-lines">
-<h2>Tangent Planes and Normal Lines<a class="headerlink" href="#tangent-planes-and-normal-lines" title="Permalink to this headline">#</a></h2>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img5.png" src="../media/mvc/grad/img5.png" />
-</div>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img6.png" src="../media/mvc/grad/img6.png" />
-</div>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img7.png" src="../media/mvc/grad/img7.png" />
-</div>
+<p>This law can be used to find <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> in many different situations.</p>
+<p>Example</p>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be a spherical surface of radius <span class="math notranslate nohighlight">\(r\)</span> enclosing a single charge <span class="math notranslate nohighlight">\(Q\)</span> at its centre.</p>
+<p>By symmetry, <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> must be normal to the surface everywhere, hence</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_{S} \mathbf{E} \cdot d \mathbf{S}=E .4 \pi r^{2}=\frac{Q}{\epsilon_{0}} \quad \text { so } \quad E=\frac{Q}{4 \pi \epsilon_{0} r^{2}} \quad \text { (Coulomb's law). }
+\]</div>
 </div>
 </div>
 
@@ -698,17 +646,17 @@ f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) = 0
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_second_derivatives.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="13_conservative_fields.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Second-Order Partial Derivatives and Chain Rule</p>
+            <p class="prev-next-title">Conservative Fields</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04_optimization.html" title="next page">
+    <a class='right-next' id="next-link" href="15_divergence_curl.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Optimization</p>
+        <p class="prev-next-title">Divergence, Curl and more Theorems</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

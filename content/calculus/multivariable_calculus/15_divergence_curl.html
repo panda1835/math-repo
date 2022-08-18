@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directional Derivatives and Gradient Vector &#8212; My Math Hub</title>
+    <title>Divergence, Curl and more Theorems &#8212; My Math Hub</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Optimization" href="04_optimization.html" />
-    <link rel="prev" title="Second-Order Partial Derivatives and Chain Rule" href="02_second_derivatives.html" />
+    <link rel="next" title="Equation sheet" href="16_equation_sheet.html" />
+    <link rel="prev" title="Flux &amp; Surface Integrals" href="14_flux_surface_integral.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -169,8 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
      Second-Order Partial Derivatives and Chain Rule
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_directional_derivatives_and_gradients.html">
      Directional Derivatives and Gradient Vector
     </a>
    </li>
@@ -229,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
      Flux &amp; Surface Integrals
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15_divergence_curl.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Divergence, Curl and more Theorems
     </a>
    </li>
@@ -339,7 +339,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/panda1835/math-repo/master?urlpath=tree/content/calculus/multivariable_calculus/03_directional_derivatives_and_gradients.ipynb"
+        <a href="https://mybinder.org/v2/gh/panda1835/math-repo/master?urlpath=tree/content/calculus/multivariable_calculus/15_divergence_curl.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -399,7 +399,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/calculus/multivariable_calculus/03_directional_derivatives_and_gradients.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/panda1835/math-repo/issues/new?title=Issue%20on%20page%20%2Fcontent/calculus/multivariable_calculus/15_divergence_curl.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -427,7 +427,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/content/calculus/multivariable_calculus/03_directional_derivatives_and_gradients.ipynb"
+        <a href="../../../_sources/content/calculus/multivariable_calculus/15_divergence_curl.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -487,38 +487,32 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradient-vector">
-   Gradient Vector
+  <a class="reference internal nav-link" href="#divergence-curl">
+   Divergence &amp; Curl
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#directional-derivative">
-   Directional Derivative
+  <a class="reference internal nav-link" href="#the-divergence-theorem">
+   The Divergence Theorem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometrical-properties">
-   Geometrical properties
+  <a class="reference internal nav-link" href="#stokes-theorem">
+   Stokes’ Theorem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-of-3-variables">
-   Functions of 3 Variables
+  <a class="reference internal nav-link" href="#green-s-theorem-in-the-plane">
+   Green’s Theorem in the Plane
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-line-to-a-level-curve">
-   Tangent Line to a Level Curve
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algebraic-rules-of-gradient">
-   Algebraic Rules of Gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-planes-and-normal-lines">
-   Tangent Planes and Normal Lines
+  <a class="reference internal nav-link" href="#formal-definitions-optional">
+   Formal definitions (
+   <em>
+    Optional
+   </em>
+   )
   </a>
  </li>
 </ul>
@@ -530,7 +524,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Directional Derivatives and Gradient Vector</h1>
+                <h1>Divergence, Curl and more Theorems</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -541,38 +535,32 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gradient-vector">
-   Gradient Vector
+  <a class="reference internal nav-link" href="#divergence-curl">
+   Divergence &amp; Curl
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#directional-derivative">
-   Directional Derivative
+  <a class="reference internal nav-link" href="#the-divergence-theorem">
+   The Divergence Theorem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#geometrical-properties">
-   Geometrical properties
+  <a class="reference internal nav-link" href="#stokes-theorem">
+   Stokes’ Theorem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions-of-3-variables">
-   Functions of 3 Variables
+  <a class="reference internal nav-link" href="#green-s-theorem-in-the-plane">
+   Green’s Theorem in the Plane
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-line-to-a-level-curve">
-   Tangent Line to a Level Curve
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algebraic-rules-of-gradient">
-   Algebraic Rules of Gradient
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tangent-planes-and-normal-lines">
-   Tangent Planes and Normal Lines
+  <a class="reference internal nav-link" href="#formal-definitions-optional">
+   Formal definitions (
+   <em>
+    Optional
+   </em>
+   )
   </a>
  </li>
 </ul>
@@ -585,89 +573,61 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="directional-derivatives-and-gradient-vector">
-<h1>Directional Derivatives and Gradient Vector<a class="headerlink" href="#directional-derivatives-and-gradient-vector" title="Permalink to this headline">#</a></h1>
-<div class="section" id="gradient-vector">
-<h2>Gradient Vector<a class="headerlink" href="#gradient-vector" title="Permalink to this headline">#</a></h2>
-<p>For a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span>, the gradient vector is defined by</p>
-<div class="math notranslate nohighlight">
-\[
-\vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}
-\]</div>
-</div>
-<div class="section" id="directional-derivative">
-<h2>Directional Derivative<a class="headerlink" href="#directional-derivative" title="Permalink to this headline">#</a></h2>
-<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is, provided the limit exists,</p>
-<div class="math notranslate nohighlight">
-\[
-D_{\vec{u}} f(a, b)=\lim _{h \rightarrow 0} \frac{f\left(a+h u_{1}, b+h u_{2}\right)-f(a, b)}{h} .
-\]</div>
-<img src="../../../media/mvc/grad/img1.png" style="width:400px;"/><p>Hence the directional derivative of a differentiable function <span class="math notranslate nohighlight">\(f(x, y)\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\left\langle u_{1}, u_{2}\right\rangle\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-D_{\vec{u}} f(a, b)=\overrightarrow{\boldsymbol{\nabla}} f(a, b) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b) u_{1}+f_{y}(a, b) u_{2} .
-\]</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="divergence-curl-and-more-theorems">
+<h1>Divergence, Curl and more Theorems<a class="headerlink" href="#divergence-curl-and-more-theorems" title="Permalink to this headline">#</a></h1>
+<div class="section" id="divergence-curl">
+<h2>Divergence &amp; Curl<a class="headerlink" href="#divergence-curl" title="Permalink to this headline">#</a></h2>
+<p>Consider a 3D vector field <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y, z)=M(x, y, z) \mathbf{i}+N(x, y, z) \mathbf{j}+P(x, y, z) \mathbf{k}\)</span>.</p>
+<p>The divergence of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is a scalar field: <span class="math notranslate nohighlight">\(\quad \operatorname{div} \overrightarrow{\boldsymbol{F}}=\overrightarrow{\boldsymbol{\nabla}} \cdot \overrightarrow{\boldsymbol{F}}=\frac{\partial M}{\partial x}+\frac{\partial N}{\partial y}+\frac{\partial P}{\partial z}\)</span></p>
+<p>The curl of <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}\)</span> is a vector field: <span class="math notranslate nohighlight">\(\quad \operatorname{curl} \overrightarrow{\boldsymbol{F}}=\overrightarrow{\boldsymbol{\nabla}} \times \overrightarrow{\boldsymbol{F}}=\left|\begin{array}{ccc}\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ \frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\ M &amp; N &amp; P\end{array}\right|\)</span></p>
+<p>Note that <span class="math notranslate nohighlight">\(\vec{\nabla}=\mathbf{i} \frac{\partial}{\partial x}+\mathbf{j} \frac{\partial}{\partial y}+\mathbf{k} \frac{\partial}{\partial z}\)</span> is the vector differential operator. (The symbol <span class="math notranslate nohighlight">\(\nabla\)</span> is sometimes read ‘nabla’ or ‘del’.)</p>
+<p>Basically speaking, in terms of fluid flow, at a given point</p>
 <ul class="simple">
-<li><p>It is the rate of change of <span class="math notranslate nohighlight">\(z\)</span> in the direction of <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}\)</span> (and is a scalar)</p></li>
-<li><p>Alternative notations: <span class="math notranslate nohighlight">\(\left.D_{\vec{u}} f\right|_{(a, b)}, \quad f_{\vec{u}}(a, b)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} \cdot \overrightarrow{\boldsymbol{F}}\)</span> tells us the rate at which the fluid spreads away from, or converges towards, the point (whether the point is a ‘source’ or a ‘sink’) - the rate of change of the fluid density at the point.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{\nabla}} \times \overrightarrow{\boldsymbol{F}}\)</span> gives a measure the rate of rotation of the fluid at the point - whether or how quickly fluid is swirling around the point.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\vec{\nabla} \cdot \overrightarrow{\boldsymbol{F}}=\overrightarrow{\mathbf{0}}\)</span> everywhere, the fluid is said to be incompressible.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\vec{\nabla} \times \overrightarrow{\boldsymbol{F}}=\overrightarrow{\mathbf{0}}\)</span> everywhere, the field is said to be curl-free or irrotational.</p></li>
 </ul>
 </div>
-<div class="section" id="geometrical-properties">
-<h2>Geometrical properties<a class="headerlink" href="#geometrical-properties" title="Permalink to this headline">#</a></h2>
-<p>If <span class="math notranslate nohighlight">\(f\)</span> is a differentiable function at the point <span class="math notranslate nohighlight">\((a, b)\)</span> and <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span> is perpendicular to the level curve (contour) of <span class="math notranslate nohighlight">\(f\)</span> through <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
-<li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b)\)</span>.</p></li>
-</ul>
-<div class="figure align-default">
-<img alt="../../../_images/img21.png" src="../../../_images/img21.png" />
-</div>
-</div>
-<div class="section" id="functions-of-3-variables">
-<h2>Functions of 3 Variables<a class="headerlink" href="#functions-of-3-variables" title="Permalink to this headline">#</a></h2>
-<p>Similarly for a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the gradient vector is defined by</p>
+<div class="section" id="the-divergence-theorem">
+<h2>The Divergence Theorem<a class="headerlink" href="#the-divergence-theorem" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(E\)</span> be a 3D region bounded by a closed surface <span class="math notranslate nohighlight">\(S\)</span>. If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y, z)\)</span> is a smooth vector field defined on <span class="math notranslate nohighlight">\(E\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[
-\vec{\nabla} f=\operatorname{grad} f=\left\langle f_{x}, f_{y}, f_{z}\right\rangle=\frac{\partial f}{\partial x} \mathbf{i}+\frac{\partial f}{\partial y} \mathbf{j}+\frac{\partial f}{\partial z} \mathbf{k}
+\iint_{S} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{S}}=\iiint_{E} \overrightarrow{\boldsymbol{\nabla}} \cdot \overrightarrow{\boldsymbol{F}} d V
 \]</div>
-<p>The directional derivative of <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\hat{\boldsymbol{u}}=\)</span> <span class="math notranslate nohighlight">\(\left\langle u_{1}, u_{2}, u_{3}\right\rangle\)</span> is</p>
+</div>
+<div class="section" id="stokes-theorem">
+<h2>Stokes’ Theorem<a class="headerlink" href="#stokes-theorem" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{F}}(x, y, z)\)</span> be a smooth vector field defined on a surface <span class="math notranslate nohighlight">\(S\)</span> which is an oriented, piecewisesmooth, open surface bounded by a simple, piecewise-smooth, closed, positively-oriented curve <span class="math notranslate nohighlight">\(C\)</span> then</p>
 <div class="math notranslate nohighlight">
 \[
-D_{\vec{u}} f(a, b, c)=\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \cdot \hat{\boldsymbol{u}}=f_{x}(a, b, c) u_{1}+f_{y}(a, b, c) u_{2}+f_{z}(a, b, c) u_{3} .
+\oint_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}=\iint_{S} \overrightarrow{\boldsymbol{\nabla}} \times \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{S}}
 \]</div>
-<p>If <span class="math notranslate nohighlight">\(\overrightarrow{\boldsymbol{\nabla}} f(a, b, c) \neq \overrightarrow{\mathbf{0}}\)</span>, then:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span> is perpendicular to the level surface of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span></p></li>
-<li><p>the maximum rate of change of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\((a, b, c)\)</span> is <span class="math notranslate nohighlight">\(|\vec{\nabla} f|\)</span> and occurs in the direction of <span class="math notranslate nohighlight">\(\vec{\nabla} f(a, b, c)\)</span>.</p></li>
-</ul>
+<p><em>Note</em>: A given space curve <span class="math notranslate nohighlight">\(C\)</span> may be the boundary of many different surfaces <span class="math notranslate nohighlight">\(S\)</span>. The surface integral will give the same value whichever surface <span class="math notranslate nohighlight">\(S\)</span> is used. (So for purposes of calculation, we may choose the simplest surface.)</p>
 </div>
-<div class="section" id="tangent-line-to-a-level-curve">
-<h2>Tangent Line to a Level Curve<a class="headerlink" href="#tangent-line-to-a-level-curve" title="Permalink to this headline">#</a></h2>
+<div class="section" id="green-s-theorem-in-the-plane">
+<h2>Green’s Theorem in the Plane<a class="headerlink" href="#green-s-theorem-in-the-plane" title="Permalink to this headline">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(C\)</span> be a piecewise smooth, simple closed curve with positive orientation and let <span class="math notranslate nohighlight">\(D\)</span> be the plane region bounded by <span class="math notranslate nohighlight">\(C\)</span>. If <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(N\)</span> have continuous first order partial derivatives on an open region that contains <span class="math notranslate nohighlight">\(D\)</span>, then</p>
 <div class="math notranslate nohighlight">
 \[
-f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) = 0
+\oint_{C} M d x+N d y=\iint_{D}\left(\frac{\partial N}{\partial x}-\frac{\partial M}{\partial y}\right) d x d y
 \]</div>
-<div class="highlight-{figure}../../../media/mvc/grad/img3.png notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<p>Optional further reading: Green’s theorem also provides a method for calculating an area by instead calculating a line integral around its boundary - see Thomas p.1011 or other textbooks.</p>
 </div>
-</div>
-<div class="section" id="algebraic-rules-of-gradient">
-<h2>Algebraic Rules of Gradient<a class="headerlink" href="#algebraic-rules-of-gradient" title="Permalink to this headline">#</a></h2>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img4.png" src="../media/mvc/grad/img4.png" />
-</div>
-</div>
-<div class="section" id="tangent-planes-and-normal-lines">
-<h2>Tangent Planes and Normal Lines<a class="headerlink" href="#tangent-planes-and-normal-lines" title="Permalink to this headline">#</a></h2>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img5.png" src="../media/mvc/grad/img5.png" />
-</div>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img6.png" src="../media/mvc/grad/img6.png" />
-</div>
-<div class="figure align-default">
-<img alt="../media/mvc/grad/img7.png" src="../media/mvc/grad/img7.png" />
-</div>
+<div class="section" id="formal-definitions-optional">
+<h2>Formal definitions (<em>Optional</em>)<a class="headerlink" href="#formal-definitions-optional" title="Permalink to this headline">#</a></h2>
+<p>In 2D, divergence and curl are formally defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{\nabla} \cdot \overrightarrow{\boldsymbol{F}}=\lim _{\left|A_{(x, y)}\right| \rightarrow 0}\left(\frac{1}{\left|A_{(x, y)}\right|} \oint_{C} \overrightarrow{\boldsymbol{F}} \cdot \hat{\boldsymbol{n}} d \overrightarrow{\boldsymbol{S}}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\vec{\nabla} \times \overrightarrow{\boldsymbol{F}}=\lim _{\left|A_{(x, y)}\right| \rightarrow 0}\left(\frac{1}{\left|A_{(x, y)}\right|} \oint_{C} \overrightarrow{\boldsymbol{F}} \cdot d \overrightarrow{\boldsymbol{r}}\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{(x, y)}\)</span> represents some region around the point <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
+<p>From these definitions we can understood divergence (curl) as the limit of the average value of the flux (circulation) over a region around a point as we let the region get smaller and smaller. - See Khan Academy website or advanced textbooks.</p>
 </div>
 </div>
 
@@ -698,17 +658,17 @@ f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) = 0
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_second_derivatives.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="14_flux_surface_integral.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Second-Order Partial Derivatives and Chain Rule</p>
+            <p class="prev-next-title">Flux &amp; Surface Integrals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04_optimization.html" title="next page">
+    <a class='right-next' id="next-link" href="16_equation_sheet.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Optimization</p>
+        <p class="prev-next-title">Equation sheet</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
