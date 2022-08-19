@@ -1,4 +1,0 @@
-# Multivariable Calculus
-
-```{tableofcontents}
-```
